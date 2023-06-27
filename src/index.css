@@ -37,7 +37,7 @@ body{
   align-items: center;
   justify-content: start;
   gap: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   cursor: pointer;
 }
 .sidebar-container li:hover{
