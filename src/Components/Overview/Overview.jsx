@@ -9,25 +9,25 @@ const Overview = () => {
         <div className="overview-box">
           <h1>6</h1>
           <h3>Criminals in Custody</h3>
-          <p className='info'><span>More info</span> <img src={Arrow} alt="" /></p>
+          <a href='#' className='info'><span>More info</span> <img src={Arrow} alt="" /></a>
         </div>
 
         <div className="overview-box">
           <h1>4</h1>
           <h3>Visitors</h3>
-          <p className='info'><span>More info</span> <img src={Arrow} alt="" /></p>
+          <a href='#' className='info'><span>More info</span> <img src={Arrow} alt="" /></a>
         </div>
 
         <div className="overview-box">
           <h1>20</h1>
           <h3>Officers</h3>
-          <p className='info'><span>More info</span> <img src={Arrow} alt="" /></p>
+          <a href='#' className='info'><span>More info</span> <img src={Arrow} alt="" /></a>
         </div>
 
         <div className="overview-box">
           <h1>5</h1>
           <h3>Crime Categories</h3>
-          <p className='info'><span>More info</span> <img src={Arrow} alt="" /></p>
+          <a href='#' className='info'><span>More info</span> <img src={Arrow} alt="" /></a>
         </div>
       </div>
       

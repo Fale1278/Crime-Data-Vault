@@ -37,10 +37,13 @@ body{
   align-items: center;
   justify-content: start;
   gap: 1rem;
+  margin-bottom: 2rem;
+  cursor: pointer;
 }
 .sidebar-container li:hover{
   display: flex;
-  padding: 10px 0px 10px 10px;
+  height: 4rem;
+  padding: 0px 0px 0px 10px;
   background: #0B274F;
 }
 .sidebar-container .officer{
@@ -80,12 +83,12 @@ body{
   background: #FFF;
   display: flex;
   align-items: center;
-  padding: 1rem;
+  padding: .5rem;
 }
 .Navbar .search{
   display: flex;
   width: 528px;
-  padding: 9px 39px 8px 22px;
+  padding: 7px 39px 8px 22px;
   margin-left: 31rem;
   margin-right: 15rem;
   align-items: center; 
@@ -103,7 +106,7 @@ body{
   background: none;
   border: none;
   outline: none;
-  color: #FFF;
+  color: rgba(255, 255, 255, 0.50);
   width: 100%;
 }
 .Navbar .search input::placeholder{
@@ -186,11 +189,19 @@ body{
 }
 
 .overview-box .info{
+  text-decoration: none;
+  color: #FFF;
+  font-size: 16px;
+  font-weight: 500;
   background: #2B5C6C;
   padding: .5rem;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.overview-box .info:hover{
+  background: #265260;
 }
 
 .overview-container .overview-box:nth-child(2) >.info:nth-child(3){
@@ -201,6 +212,10 @@ body{
   justify-content: center;
 }
 
+.overview-container .overview-box:nth-child(2) >.info:nth-child(3):hover{
+  background: #464b4d;
+}
+
 .overview-container .overview-box:nth-child(3) >.info:nth-child(3){
   background: #24386B;
   padding: .5rem;
@@ -209,12 +224,20 @@ body{
   justify-content: center;
 }
 
+.overview-container .overview-box:nth-child(3) >.info:nth-child(3):hover{
+  background: #20315e;
+}
+
 .overview-container .overview-box:nth-child(4) >.info:nth-child(3){
   background: #2D2D2E;
   padding: .5rem;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.overview-container .overview-box:nth-child(4) >.info:nth-child(3):hover{
+  background: #222223;
 }
 
 .Chart-Table{
@@ -294,18 +317,3 @@ body{
   margin-top: 10rem;
 } 
 
-ul {
-  display: block;
-  background-color: #f2f2f2;
-  padding: 10px;
-  list-style-type: none;
-} 
-
-li {
-  cursor: pointer;
-  padding: 5px;
-}
-
-li:hover {
-  background-color: #e0e0e0;
-}
