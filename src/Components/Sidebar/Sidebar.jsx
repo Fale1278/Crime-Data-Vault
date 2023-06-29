@@ -32,8 +32,8 @@ const Sidebar = () => {
           <li onClick={handleDashboardDropdownClick}><img className='images' src={Dashboard} alt="" /> <span>Criminal Record</span><img className='images' src={Arrow2} alt="" /></li>
           {isDashboardDropdownOpen&& (
             <ul>
-              <li><img className='images' src={Eye} alt="" />View Criminal Record</li>
-              <li><img className='images' src={Plus} alt="" />Add Criminal Record</li>
+              <li className='eyes'><img className='images' src={Eye} alt="" />View Criminal Record</li>
+              <li className='eyes'><img className='images' src={Plus} alt="" />Add Criminal Record</li>
             </ul>
           )}
         </div>
@@ -42,8 +42,8 @@ const Sidebar = () => {
           <li onClick={handleCriminalDropdownClick}><img className='images' src={Criminal} alt="" /><span>Visitor's Record</span><img className='images' src={Arrow2} alt="" /></li>
           {isCriminalDropdownOpen && (
             <ul>
-              <li>Option 1</li>
-              <li>Option 2</li>
+              <li className='eyes'><img className='images' src={Eye} alt="" />View Visitor's Record</li>
+              <li className='eyes'><img className='images' src={Plus} alt="" />Add Visitor's Record</li>
             </ul>
           )}
         </div>

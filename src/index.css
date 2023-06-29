@@ -42,9 +42,19 @@ body{
 }
 .sidebar-container li:hover{
   display: flex;
-  height: 4rem;
-  padding: 0px 0px 0px 10px;
-  background: #0B274F;
+  color: #C4C4C4;
+}
+
+.sidebar-container div ul .eyes{
+  list-style: none;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 1rem;
+  margin-left: 2rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
 }
 .sidebar-container .officer{
   padding: 1rem 0 1.5rem 0;
@@ -120,6 +130,7 @@ body{
   justify-content: center;
   align-items: center;
   gap: 1rem;
+  margin-right: .5rem;
   padding-left: .5rem;
   border-left: 1px solid #000;
 }
