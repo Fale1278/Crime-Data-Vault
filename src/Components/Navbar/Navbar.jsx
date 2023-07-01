@@ -1,4 +1,3 @@
-import React from 'react'
 import Officer2 from '../../assets/Officer2.svg'
 
 const Navbar = () => {

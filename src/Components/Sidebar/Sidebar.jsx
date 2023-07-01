@@ -1,4 +1,5 @@
-import React, {useState} from 'react'
+import React, { useState, useEffect} from "react";
+import { Link } from "react-router-dom";
 import Dashboard from '../../assets/dashboard.png'
 import Criminal from '../../assets/criminal.png'
 import Visitors from '../../assets/visitors.png'
@@ -9,7 +10,6 @@ import Officer from '../../assets/officer.png'
 import Arrow2  from '../../assets/arrow2.png'
 import Eye  from '../../assets/eye.png'
 import Plus  from '../../assets/Plus.png'
-
 
 const Sidebar = () => {
   const [isDashboardDropdownOpen, setIsDashboardDropdownOpen] = useState(false);
@@ -32,7 +32,9 @@ const Sidebar = () => {
           <li onClick={handleDashboardDropdownClick}><img className='images' src={Dashboard} alt="" /> <span>Criminal Record</span><img className='images' src={Arrow2} alt="" /></li>
           {isDashboardDropdownOpen&& (
             <ul>
-              <li className='eyes'><img className='images' src={Eye} alt="" />View Criminal Record</li>
+              <Link to='/'>         
+                <li className='eyes'><img className='images' src={Eye} alt="" />View Criminal Record</li>
+              </Link>
               <li className='eyes'><img className='images' src={Plus} alt="" />Add Criminal Record</li>
             </ul>
           )}

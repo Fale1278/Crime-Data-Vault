@@ -88,19 +88,20 @@ body{
 }
 
 .Navbar{
-  position: relative;
+  position: fixed;
   border-bottom: 1px solid rgba(0, 0, 0, 0.68);
   background: #FFF;
   display: flex;
   align-items: center;
   padding: .5rem;
+  width: 100%;
 }
 .Navbar .search{
   display: flex;
   width: 528px;
   padding: 7px 39px 8px 22px;
   margin-left: 31rem;
-  margin-right: 15rem;
+  margin-right: 14rem;
   align-items: center; 
   border-radius: 45px;
   border: 1px solid #0E346C;
@@ -137,6 +138,7 @@ body{
 
 .overview {
   margin-left: 18rem;
+  margin-top: 4rem;
 }
 .overview h3{
   color: #000;

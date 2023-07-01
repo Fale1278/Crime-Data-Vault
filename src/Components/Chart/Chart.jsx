@@ -1,4 +1,3 @@
-import React from 'react';
 import { PieChart } from 'react-minimal-pie-chart';
 
 const Chart = () => {
@@ -32,7 +31,7 @@ const Chart = () => {
             <div className="legend-text">{item.title}</div>
           </div>
         ))}
-      </div>
+      </div>     
     </div>
   );
 }
