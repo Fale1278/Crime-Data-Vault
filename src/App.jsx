@@ -6,16 +6,18 @@ import Footer from './Components/Footer/Footer'
 import Overview from './Components/Overview/Overview'
 import Chart from './Components/Chart/Chart'
 import Table from './Components/Table/Table'
+import AddCriminal from './Pages/Add-criminal-record'
 const App = () => {
   return (
     <div className='main-ody'>
       <Navbar />
       <Sidebar />
-      <Overview />
-      <div className="Chart-Table">
+      {/* <Overview /> */}
+      {/* <div className="Chart-Table">
         <Chart />
         <Table />
-      </div>
+      </div> */}
+      <AddCriminal />
       <Footer />
     </div>
   )

@@ -32,9 +32,9 @@ const Sidebar = () => {
           <li onClick={handleDashboardDropdownClick}><img className='images' src={Dashboard} alt="" /> <span>Criminal Record</span><img className='images' src={Arrow2} alt="" /></li>
           {isDashboardDropdownOpen&& (
             <ul>
-              <Link to='/'>         
+              {/* <Link to='/Pages/View-criminal-record'>          */}
                 <li className='eyes'><img className='images' src={Eye} alt="" />View Criminal Record</li>
-              </Link>
+              {/* </Link> */}
               <li className='eyes'><img className='images' src={Plus} alt="" />Add Criminal Record</li>
             </ul>
           )}

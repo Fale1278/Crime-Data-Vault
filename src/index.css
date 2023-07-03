@@ -8,7 +8,7 @@
 }
 
 body{
-  background: #C4C4C4;
+  background: rgb(238, 238, 238);
   font-family: 'Poopins', sans-serif;
   color: #FFF;
 }
@@ -326,7 +326,70 @@ body{
   bottom: 0;
   width: 100%;
   background: #151515;
-  padding: 1rem 0 1rem 18rem;
+  padding: 2rem 0 2rem 18rem;
   margin-top: 10rem;
 } 
 
+.criminal-record{
+  margin: 6rem 0 4rem 25rem;
+  color: #000;
+}
+.criminal-record .add-text{
+  margin-left: 17rem;
+  margin-bottom: 4rem;
+}
+.add-container{
+  display: flex;
+  gap: 6rem;
+
+}
+
+.add-box ul p{
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%;
+  margin: .5rem 0 .5rem 0;
+}
+
+.add-box ul input{  
+  width: 313px;
+  height: 35px;
+  padding: 0px 7.72px 0px 5px;
+  border-radius: 5px;
+  border: 0.7px solid #000;
+  color: rgba(0, 0, 0, 0.5);
+  outline: none;
+  background: none;
+  box-shadow: 1px 3px 10px  rgba(162, 162, 162, 0.68);
+}
+
+.add-box .biometric{
+  text-align: center;
+  padding-top: 2rem;
+}
+
+.add-box .biometric .finger-capture{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  margin-top: 2rem;
+  
+}
+
+.addBtn{
+  display: inline-flex;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 150px;
+  padding: 1rem;
+  border-radius: 10px;
+  background: #0E346C;
+  border: none;
+  color: #FFF;
+  margin-top: 4rem;
+  margin-left:20rem;
+}
