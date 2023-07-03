@@ -7,6 +7,7 @@ import Overview from './Components/Overview/Overview'
 import Chart from './Components/Chart/Chart'
 import Table from './Components/Table/Table'
 import AddCriminal from './Pages/Add-criminal-record'
+import ViewCriminal from './Pages/View-criminal-record'
 const App = () => {
   return (
     <div className='main-ody'>
@@ -17,7 +18,8 @@ const App = () => {
         <Chart />
         <Table />
       </div> */}
-      <AddCriminal />
+      {/* <AddCriminal /> */}
+      <ViewCriminal />
       <Footer />
     </div>
   )

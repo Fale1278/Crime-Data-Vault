@@ -393,3 +393,87 @@ body{
   margin-top: 4rem;
   margin-left:20rem;
 }
+
+.view-record{
+  margin: 6rem 0 4rem 18rem;
+  color: #000;
+}
+
+.view-records-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 1rem;
+  font-size: 14px;
+}
+.view-records-container .entries p{
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.view-records-container .entries2 p{
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  color: #FFF;
+  font-size: 14px;
+  margin-left: 8rem;
+  margin-bottom: .5rem;
+  background: #1569E5;
+  padding: 1rem;
+}
+
+.view-records-container .entries2 ul{
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  margin-left: 4.5rem;
+}
+.view-records-container .entries2 ul input{
+  width: 138px;
+  height: 24px;
+  padding: .8rem;
+  border-radius: 45px;
+  outline: none;
+  border: 0.7px solid rgba(0, 0, 0, 0.50);
+  box-shadow: 1px 3px 10px  rgba(162, 162, 162, 0.68);
+}
+
+table{
+  margin-top: 1rem;
+  margin-right: 1rem;
+  text-align: center;
+  height: 1000px;
+}
+
+.thead, th{
+  background: #0E346C;
+  color: #FFF;
+  padding: .5rem;  
+  width: 8rem;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+tbody tr td{
+  border-right: 1px solid #000;
+}
+
+.skip{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  gap: 1rem;
+  word-spacing: 1rem;
+  color: #2D2D2E;
+  margin-top: 3rem;
+}
+
+.skip i{
+  font-size: 2rem;
+}
