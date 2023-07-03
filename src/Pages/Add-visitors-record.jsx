@@ -3,10 +3,10 @@ import Finger from './../assets/fingerprint.png'
 import Capture from './../assets/capture.png'
 
 
-const AddCriminal = () => {
+const AddVisitor = () => {
   return (
     <div className='criminal-record'>
-      <p className='add-text'>Add a New Criminal record</p>
+      <p className='add-text'>Add Visitor's  record</p>
 
       <div className="add-container">
         <div className="add-box">
@@ -44,46 +44,21 @@ const AddCriminal = () => {
             <p>Town</p>
             <input type="text" />
           </ul>
-
-          <ul>
-            <p>Height</p>
-            <input type="text" />
-          </ul>
-
-          <ul>
-            <p>Eye Color</p>
-            <input type="text" />
-          </ul>
-
-          <ul>
-            <p>Blood Group</p>
-            <input type="text" />
-          </ul>
-
-          <ul>
-            <p>Hair Color</p>
-            <input type="text" />
-          </ul>
-
-          <ul>
-            <p>Weight</p>
-            <input type="text" />
-          </ul>
         </div>
 
         <div className="add-box">
           <ul>
-            <p>Crime Committed</p>
+            <p>Inmate Visited</p>
             <input type="text" />
           </ul>
 
           <ul>
-            <p>Crime Date</p>
+            <p>Last Visit Date</p>
             <input type="date" />
           </ul>
 
           <ul>
-            <p>Reported By</p>
+            <p>Relationship with inmate</p>
             <input type="text" />
           </ul>
 
@@ -115,4 +90,4 @@ const AddCriminal = () => {
   )
 }
 
-export default AddCriminal
+export default AddVisitor
