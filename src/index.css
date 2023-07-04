@@ -477,3 +477,16 @@ tbody tr td{
 .skip i{
   font-size: 2rem;
 }
+
+.police-profile-container{
+  margin: 6rem 0 4rem 18rem;
+  color: #000;
+}
+
+.pol{
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  gap: .5rem;
+}

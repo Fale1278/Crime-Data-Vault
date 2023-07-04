@@ -11,6 +11,7 @@ import ViewCriminal from './Pages/View-criminal-record'
 import ViewVisitors from './Pages/View-visitors-record'
 import AddVisitor from './Pages/Add-visitors-record'
 import PoliceRecords from './Pages/Police-records'
+import PoliceProfile from './Pages/Police-Profile'
 const App = () => {
   return (
     <div className='main-ody'>
@@ -26,6 +27,7 @@ const App = () => {
       {/* <ViewVisitors /> */}
       {/* <AddVisitor /> */}
       {/* <PoliceRecords />  */}
+      <PoliceProfile />
       <Footer />
     </div>
   )
