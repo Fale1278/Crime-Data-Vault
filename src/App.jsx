@@ -25,7 +25,7 @@ const App = () => {
       {/* <ViewCriminal /> */}
       {/* <ViewVisitors /> */}
       {/* <AddVisitor /> */}
-      {/* <PoliceRecords /> */}
+      {/* <PoliceRecords />  */}
       <Footer />
     </div>
   )
