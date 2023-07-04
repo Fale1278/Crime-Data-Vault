@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@700&family=Poppins:wght@200;300;400;600;700;800&family=Roboto:wght@100;300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@700&family=Poppins:wght@200;300;400;500;600;700;800&family=Roboto:wght@100;300;400;500;700&display=swap');
+
+
 *{
   box-sizing: border-box;
   margin: 0;
@@ -11,6 +13,7 @@ body{
   background: rgb(238, 238, 238);
   font-family: 'Poopins', sans-serif;
   color: #FFF;
+  font-weight: 500;
 }
 
 .main-body{
@@ -478,15 +481,89 @@ tbody tr td{
   font-size: 2rem;
 }
 
-.police-profile-container{
-  margin: 6rem 0 4rem 18rem;
+.police-profile{
+  margin: 6rem 1rem 1rem 18rem;
   color: #000;
+
 }
 
 .pol{
   display: flex;
   align-items: center;
+  justify-content: space-between;
+
+}
+
+.pol div span{
   font-size: 1.5rem;
   font-weight: 600;
-  gap: .5rem;
+  padding-left: .5rem;
 }
+
+.pol .back{
+  color: #0E346C;
+  font-size: .9rem;
+  font-weight: 600;
+}
+.police-details-container{
+  display: flex;
+  gap: 2rem;
+}
+.police-details{
+  margin-top: 4rem;
+}
+.police-details .police-details-box{
+  width: 437px;
+  height: 591px;
+
+}
+.police-details-box h1{
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  display: flex;
+  padding: 12px 109px 12px 117px;
+  justify-content: flex-end;
+  align-items: center;
+  border-radius: 10px 10px 0px 0px;
+  background: #C1C1C1;
+  margin-bottom: 1rem;
+}
+
+.police-details-box .external img{
+  width: 100%;
+}
+
+.police-details2{
+  margin-top: 4rem;
+}
+.police-details2-box h1{
+  color: #FFF;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 50px 12px 50px;
+  border-radius: 10px 10px 0px 0px;
+  background: #0E346C;
+  margin-bottom: 1rem;
+  gap: 2rem;
+}
+.external2{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1rem;
+  width: 25rem;
+  height: 37rem;
+  gap: 1.7rem;
+  background: #FFF;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  
+}
+
+
