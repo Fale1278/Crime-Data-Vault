@@ -1,5 +1,14 @@
 import React from 'react'
 
+import{
+  createBrowserRouter,
+  Routes,
+  Route,
+  Link,
+  NavLink
+} from 'react-router-dom'
+
+
 import Navbar from './Components/Navbar/Navbar'
 import Sidebar from './Components/Sidebar/Sidebar'
 import Footer from './Components/Footer/Footer'
@@ -12,6 +21,9 @@ import ViewVisitors from './Pages/View-visitors-record'
 import AddVisitor from './Pages/Add-visitors-record'
 import PoliceRecords from './Pages/Police-records'
 import PoliceProfile from './Pages/Police-Profile'
+import CriminalProfile from './Pages/Criminal-Profile'
+
+
 const App = () => {
   return (
     <div className='main-ody'>
@@ -27,7 +39,8 @@ const App = () => {
       {/* <ViewVisitors /> */}
       {/* <AddVisitor /> */}
       {/* <PoliceRecords />  */}
-      <PoliceProfile />
+      {/* <PoliceProfile /> */}
+      <CriminalProfile/>
       <Footer />
     </div>
   )

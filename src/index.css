@@ -491,12 +491,13 @@ tbody tr td{
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: static;
 
 }
 
 .pol div span{
-  font-size: 1.5rem;
-  font-weight: 600;
+  font-size: 2rem;
+  font-weight: 500;
   padding-left: .5rem;
 }
 
@@ -517,15 +518,13 @@ tbody tr td{
   height: 591px;
 
 }
-.police-details-box h1{
-  font-size: 32px;
+.police-details-box .kiri-kiri{
+  font-size: 12px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  display: flex;
-  padding: 12px 109px 12px 117px;
-  justify-content: flex-end;
-  align-items: center;
+  padding: 12px 25px 12px 25px;
+  text-align: center;
   border-radius: 10px 10px 0px 0px;
   background: #C1C1C1;
   margin-bottom: 1rem;
@@ -547,7 +546,7 @@ tbody tr td{
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 50px 12px 50px;
+  padding: 12px 10px 12px 10px;
   border-radius: 10px 10px 0px 0px;
   background: #0E346C;
   margin-bottom: 1rem;
@@ -564,6 +563,20 @@ tbody tr td{
   background: #FFF;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   
+}
+
+.update{
+  display: flex;
+  padding: 10px;
+  width: 150px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 10px;
+  background: #0E346C;
+  border: none;
+  color: #FFF;
+  margin: 4rem 28rem;
 }
 
 
