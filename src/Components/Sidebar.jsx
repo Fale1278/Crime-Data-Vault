@@ -9,7 +9,7 @@ import Logout from '../assets/logout.png'
 import Officer from '../assets/officer.png'
 import Arrow2  from '../assets/arrow2.png'
 import Eye  from '../assets/eye.png'
-import Plus  from '../assets/Plus.png'
+import Plus  from '../assets/plus.png'
 
 const Sidebar = () => {
   const [isDashboardDropdownOpen, setIsDashboardDropdownOpen] = useState(false);
