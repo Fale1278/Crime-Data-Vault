@@ -17,7 +17,9 @@ const PoliceProfile = () => {
       <div className="police-details-container">
         <div className="police-details">
           <div className="police-details-box">
-            <h1>Jesse Kanadi</h1>
+            <div className="kiri-kiri">
+              <h1>Jesse Kanadi</h1>
+            </div>
             <div className="external">
               <img src={Jesse} alt="" />
             </div>

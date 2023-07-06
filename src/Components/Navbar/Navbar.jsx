@@ -1,4 +1,4 @@
-import Officer2 from '../../assets/Officer2.svg'
+import Officer2 from '../../assets/officer2.png'
 
 const Navbar = () => {
   return (

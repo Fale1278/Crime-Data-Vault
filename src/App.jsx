@@ -1,11 +1,5 @@
 import React from 'react'
 
-import{
-  BrowserRouter,
-  Routes,
-  Route,
-} from 'react-router-dom'
-
 
 import Navbar from './Components/Navbar/Navbar'
 import Sidebar from './Components/Sidebar/Sidebar'
@@ -27,17 +21,17 @@ const App = () => {
     <div className='main-ody'>
       <Navbar />
       <Sidebar />
-      {/* <Overview />
-      <div className="Chart-Table">
+      <Overview />
+      {/* <div className="Chart-Table">
         <Chart />
         <Table />
       </div> */}
-      {/* <AddCriminal /> */}
-      {/* <ViewCriminal /> */}
-      {/* <ViewVisitors /> */}
-      {/* <AddVisitor /> */}
-      {/* <PoliceRecords />  */}
-      {/* <PoliceProfile /> */}
+      {/* <AddCriminal />
+      <ViewCriminal />
+      <ViewVisitors />
+      <AddVisitor />
+      <PoliceRecords />  */}
+      <PoliceProfile />
       {/* <CriminalProfile/> */}
       <Footer />
     </div>
