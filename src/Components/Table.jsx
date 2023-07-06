@@ -2,7 +2,7 @@ import React from 'react'
 
 import Robbery from '../assets/Robbery.png'
 import Murder from '../assets/murder.png'
-import Sexual from '../assets/sexual.png'
+import Sexual from '../assets/Sexual.png'
 import Cyber from '../assets/cyber.png'
 import Kidnapping from '../assets/Kidnapping.png'
 
