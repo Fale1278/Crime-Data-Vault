@@ -1,5 +1,5 @@
 import React, { useState, useEffect} from "react";
-// import { Navlink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Dashboard from '../assets/dashboard.png'
 import Criminal from '../assets/criminal.png'
 import Visitors from '../assets/visitors.png'
@@ -27,15 +27,20 @@ const Sidebar = () => {
     <div className='sidebar'>
       <div className="sidebar-container">
         <ul className='officer'><img src={Officer} alt="" /><span>Officer Salihu Musa</span></ul>
-        <li><img className='images' src={Visitors} alt="" /><span>Dashboard</span></li>
+        <Link to='/' className="link">
+          <li><img className='images' src={Visitors} alt="" /><span>Dashboard</span></li>
+        </Link>
         <div>
           <li onClick={handleDashboardDropdownClick}><img className='images' src={Dashboard} alt="" /> <span>Criminal Record</span><img className='images' src={Arrow2} alt="" /></li>
           {isDashboardDropdownOpen&& (
             <ul>
-              {/* <Navlink to='/Viewcriminal '>          */}
+              <Link to='/viewCriminal' className="link">         
                 <li className='eyes'><img className='images' src={Eye} alt="" />View Criminal Record</li>
-              {/* </Navlink> */}
-              <li className='eyes'><img className='images' src={Plus} alt="" />Add Criminal Record</li>
+              </Link>
+
+              <Link to='/addCriminal' className="link">
+                <li className='eyes'><img className='images' src={Plus} alt="" />Add Criminal Record</li>
+              </Link>
             </ul>
           )}
         </div>
@@ -44,14 +49,27 @@ const Sidebar = () => {
           <li onClick={handleCriminalDropdownClick}><img className='images' src={Criminal} alt="" /><span>Visitor's Record</span><img className='images' src={Arrow2} alt="" /></li>
           {isCriminalDropdownOpen && (
             <ul>
-              <li className='eyes'><img className='images' src={Eye} alt="" />View Visitor's Record</li>
-              <li className='eyes'><img className='images' src={Plus} alt="" />Add Visitor's Record</li>
+              <Link to='/viewVisitor' className="link">
+                <li className='eyes'><img className='images' src={Eye} alt="" />View Visitor's Record</li>
+              </Link>
+
+              <Link to='/addVisitor' className="link">
+                <li className='eyes'><img className='images' src={Plus} alt="" />Add Visitor's Record</li>
+              </Link>
             </ul>
           )}
         </div>
-        <li><img className='images' src={Police} alt="" /><a href="#"><span>Police Profile</span></a></li>
-        <li><img className='images' src={Crime} alt="" /><a href="#"><span>Crime Categories</span></a></li>
-        <li><img className='images' src={Logout} alt="" /><a href="#"><span>Logout</span></a></li>
+        <Link to='/policeRecord' className="link">
+          <li><img className='images' src={Police} alt="" /><a href="#"><span>Police Profile</span></a></li>
+        </Link>
+
+        <Link to='/crimeCategories' className="link">
+          <li><img className='images' src={Crime} alt="" /><a href="#"><span>Crime Categories</span></a></li>
+        </Link>
+
+        <Link to='/logout' className="link">
+          <li><img className='images' src={Logout} alt="" /><a href="#"><span>Logout</span></a></li>
+        </Link>
 
       </div>
     </div>

@@ -9,14 +9,11 @@ import Overview from '../../Components/Overview'
 const Home = () => {
   return (
     <div>
-      <Navbar />
-      <Sidebar />
       <Overview />
       <div className="chart-table">
         <Chart />
         <Table />
       </div>
-      <Footer />
     </div>
   )
 }

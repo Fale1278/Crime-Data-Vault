@@ -1,7 +1,7 @@
 import React from 'react'
-import Visitor from './../assets/visitors.svg'
-import Desmond from './../assets/desmond.png'
-import Eye2 from './../assets/eye2.png'
+import Visitor from '../../assets/visitors.svg'
+import Desmond from '../../assets/desmond.png'
+import Eye2 from '../../assets/eye2.png'
 
 
 const ViewVisitors = () => {

@@ -89,6 +89,10 @@ body{
   align-items: flex-start;
   gap: 10px;
 }
+.sidebar .link{
+  text-decoration: none;
+  color: #fff;
+}
 
 .Navbar{
   position: fixed;
