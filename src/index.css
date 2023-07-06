@@ -256,7 +256,7 @@ body{
   background: #222223;
 }
 
-.Chart-Table{
+.chart-table{
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -461,9 +461,27 @@ table{
   font-size: 14px;
   font-weight: 400;
 }
+.table2{
+  margin-right: 1rem;
+  text-align: center;
+  height: 600px;
+}
+
+.thead2, th{
+  background: #0E346C;
+  color: #FFF; 
+  width: 16.5rem;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 2;
+}
 
 tbody tr td{
   border-right: 1px solid #000;
+}
+.table2 tbody tr td{
+  border-right: 1px solid #000;
+  border-bottom: 1px solid #000;
 }
 
 .skip{
@@ -532,6 +550,7 @@ tbody tr td{
 
 .police-details-box .external img{
   width: 100%;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
 .police-details2{

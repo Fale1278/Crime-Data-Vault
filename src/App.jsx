@@ -1,11 +1,9 @@
 import React from 'react'
 
 import{
-  createBrowserRouter,
+  BrowserRouter,
   Routes,
   Route,
-  Link,
-  NavLink
 } from 'react-router-dom'
 
 
@@ -40,7 +38,7 @@ const App = () => {
       {/* <AddVisitor /> */}
       {/* <PoliceRecords />  */}
       {/* <PoliceProfile /> */}
-      <CriminalProfile/>
+      {/* <CriminalProfile/> */}
       <Footer />
     </div>
   )

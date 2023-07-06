@@ -1,5 +1,5 @@
 import React, { useState, useEffect} from "react";
-import { Link } from "react-router-dom";
+// import { Navlink } from "react-router-dom";
 import Dashboard from '../../assets/dashboard.png'
 import Criminal from '../../assets/criminal.png'
 import Visitors from '../../assets/visitors.png'
@@ -32,9 +32,9 @@ const Sidebar = () => {
           <li onClick={handleDashboardDropdownClick}><img className='images' src={Dashboard} alt="" /> <span>Criminal Record</span><img className='images' src={Arrow2} alt="" /></li>
           {isDashboardDropdownOpen&& (
             <ul>
-              {/* <Link to='/Pages/View-criminal-record'>          */}
+              {/* <Navlink to='/Viewcriminal '>          */}
                 <li className='eyes'><img className='images' src={Eye} alt="" />View Criminal Record</li>
-              {/* </Link> */}
+              {/* </Navlink> */}
               <li className='eyes'><img className='images' src={Plus} alt="" />Add Criminal Record</li>
             </ul>
           )}

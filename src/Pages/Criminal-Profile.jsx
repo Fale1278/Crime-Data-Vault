@@ -1,5 +1,4 @@
 import React from 'react'
-import Police2 from './../assets/police2.png'
 import Leo from './../assets/leo.png'
 import Contact from './../assets/contact.svg'
 import Finger from './../assets/fingerprint.png'
