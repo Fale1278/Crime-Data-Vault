@@ -67,10 +67,8 @@ const Sidebar = () => {
           <li><img className='images' src={Crime} alt="" /><a href="#"><span>Crime Categories</span></a></li>
         </Link>
 
-        <Link to='/logout' className="link">
           <li><img className='images' src={Logout} alt="" /><a href="#"><span>Logout</span></a></li>
-        </Link>
-
+       
       </div>
     </div>
   )
