@@ -1,5 +1,5 @@
 import React from 'react'
-import Arrow from '../../assets/arrow.png'
+import Arrow from '../assets/arrow.png'
 
 const Overview = () => {
   return (

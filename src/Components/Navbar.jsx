@@ -1,4 +1,4 @@
-import Officer2 from '../../assets/officer2.png'
+import Officer2 from '../assets/officer2.png'
 
 const Navbar = () => {
   return (

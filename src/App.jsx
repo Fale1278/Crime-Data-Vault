@@ -1,39 +1,19 @@
 import React from 'react'
-
-
-import Navbar from './Components/Navbar/Navbar'
-import Sidebar from './Components/Sidebar/Sidebar'
-import Footer from './Components/Footer/Footer'
-import Overview from './Components/Overview/Overview'
-import Chart from './Components/Chart/Chart'
-import Table from './Components/Table/Table'
-import AddCriminal from './Pages/Add-criminal-record'
-import ViewCriminal from './Pages/View-criminal-record'
-import ViewVisitors from './Pages/View-visitors-record'
-import AddVisitor from './Pages/Add-visitors-record'
-import PoliceRecords from './Pages/Police-records'
-import PoliceProfile from './Pages/Police-Profile'
-import CriminalProfile from './Pages/Criminal-Profile'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Home from './Pages/home/Home'
+import Criminal from './Pages/view-criminal/View-criminal-record'
 
 
 const App = () => {
   return (
     <div className='main-ody'>
-      <Navbar />
-      <Sidebar />
-      <Overview />
-      {/* <div className="Chart-Table">
-        <Chart />
-        <Table />
-      </div> */}
-      {/* <AddCriminal />
-      <ViewCriminal />
-      <ViewVisitors />
-      <AddVisitor />
-      <PoliceRecords />  */}
-      <PoliceProfile />
-      {/* <CriminalProfile/> */}
-      <Footer />
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Home />}>
+            <Route path='View-criminal' element={<Criminal />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   )
 }
