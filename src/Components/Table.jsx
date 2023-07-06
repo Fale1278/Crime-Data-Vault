@@ -4,7 +4,7 @@ import Robbery from '../assets/Robbery.png'
 import Murder from '../assets/murder.png'
 import Sexual from '../assets/Sexual.png'
 import Cyber from '../assets/cyber.png'
-import Kidnapping from '../assets/Kidnapping.png'
+import Kidnapping from '../assets/kidnapping.png'
 
 const Table = () => {
   return (
