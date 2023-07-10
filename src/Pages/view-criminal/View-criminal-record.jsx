@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom'
 
 import Finger from '../../assets/fingerprint.png'
 import Desmond from '../../assets/desmond.png'
@@ -61,7 +61,7 @@ const ViewCriminal = () => {
             <td>Rape</td>
             <td>1/06/2023</td>
             <td>Pending</td>
-            <td><img src={Eye2} alt="" /></td>
+            <td><Link to='/criminalProfile'><img src={Eye2} alt="" /></Link></td>
             <td>Pending</td>  
           </tr>
 

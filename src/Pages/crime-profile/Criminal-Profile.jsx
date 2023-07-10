@@ -1,7 +1,10 @@
 import React from 'react'
-import Leo from './../assets/leo.png'
-import Contact from './../assets/contact.svg'
-import Finger from './../assets/fingerprint.png'
+
+import { Link } from 'react-router-dom'
+
+import Leo from '../../assets/leo.png'
+import Contact from '../../assets/contact.svg'
+import Finger from '../../assets/fingerprint.png'
 const CriminalProfile = () => {
   return (
     <div className='police-profile'>
@@ -10,7 +13,7 @@ const CriminalProfile = () => {
           <img src={Finger} alt="" /><span>Assailant Crime Details</span>
         </div>
 
-        <div className='back'><i class='bx bx-left-arrow-alt'></i><e>Back</e ></div>
+        <div className='back'><Link to='/viewCriminal' ><i class='bx bx-left-arrow-alt'></i><e>Back</e ></Link></div>
       </div>
 
       <div className="police-details-container">
@@ -79,7 +82,9 @@ const CriminalProfile = () => {
         </div> 
       </div>
 
-      <button className='update'>Update Record</button>
+      <button className='update'>
+        <Link to='/updateCriminal' className='link'>Update Record</Link>
+      </button>
     </div>
   )
 }

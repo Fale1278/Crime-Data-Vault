@@ -1,8 +1,8 @@
 import React from 'react'
-import Police2 from './../assets/police2.png'
-import Jesse from './../assets/jesse.png'
-import Contact from './../assets/contact.svg'
-import Finger from './../assets/fingerprint.png'
+import Police2 from '../../assets/police2.png'
+import Jesse from '../../assets/jesse.png'
+import Contact from '../../assets/contact.svg'
+import Finger from '../../assets/fingerprint.png'
 const PoliceProfile = () => {
   return (
     <div className='police-profile'>

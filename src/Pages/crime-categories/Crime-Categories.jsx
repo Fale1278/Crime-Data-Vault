@@ -1,7 +1,5 @@
 import React from 'react'
-import Finger from './../assets/fingerprint.png'
-import Desmond from './../assets/desmond.png'
-import Eye2 from './../assets/eye2.png'
+import Finger from '../../assets/fingerprint.png'
 
 
 const CrimeCategory = () => {

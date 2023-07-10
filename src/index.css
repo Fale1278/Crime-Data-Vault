@@ -7,11 +7,11 @@
   padding: 0;
   top: 0;
   left: 0;
+  font-family: 'Poppins', sans-serif;
 }
 
 body{
-  background: rgb(238, 238, 238);
-  font-family: 'Poopins', sans-serif;
+  background: rgb(221, 221, 221);
   color: #FFF;
   font-weight: 500;
 }
@@ -28,11 +28,13 @@ body{
   width: 274px;
   height: 1248px;
   flex-shrink: 0;
-  background: #0E346C;
+  background: hsl(216, 77%, 24%);
 }
+
 .sidebar-container{
   padding: 1rem;
 }
+
 .sidebar-container li{
   list-style: none;
   margin-bottom: 1rem;
@@ -43,9 +45,11 @@ body{
   margin-bottom: 1.5rem;
   cursor: pointer;
 }
+
 .sidebar-container li:hover{
   display: flex;
   color: #C4C4C4;
+  
 }
 
 .sidebar-container div ul .eyes{
@@ -68,28 +72,29 @@ body{
   margin-bottom: 1rem;
 }
 .sidebar-container .officer img{
-  width: 64.093px;
-  height: 64.093px;
+  width: 50.093px;
+  height: 50.093px;
   border-radius: 50%;
 }
 .sidebar-container li .images{
-  width: 24px;
-  height: 23.848px;
+  width: 20px;
+  height: 20px;
   flex-shrink: 0;
   color: #FFFFFF;
 }
-.sidebar-container li a{
+.sidebar-container li{
   text-decoration: none;
   color: #FFF;
   font-size: 16px;
   display: flex;
   align-items: center;
   width: 227px;
-  padding: 10px 0px 10px 1px;
+  padding: 5px 0px 5px 1px;
   align-items: flex-start;
   gap: 10px;
 }
-.sidebar .link{
+
+.link{
   text-decoration: none;
   color: #fff;
 }
@@ -548,7 +553,7 @@ tbody tr td{
   padding: 12px 25px 12px 25px;
   text-align: center;
   border-radius: 10px 10px 0px 0px;
-  background: #C1C1C1;
+  background: #f0f0f0;
   margin-bottom: 1rem;
 }
 
@@ -590,7 +595,7 @@ tbody tr td{
 
 .update{
   display: flex;
-  padding: 10px;
+  padding: 15px;
   width: 150px;
   justify-content: center;
   align-items: center;

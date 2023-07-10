@@ -28,10 +28,10 @@ const Sidebar = () => {
       <div className="sidebar-container">
         <ul className='officer'><img src={Officer} alt="" /><span>Officer Salihu Musa</span></ul>
         <Link to='/' className="link">
-          <li><img className='images' src={Visitors} alt="" /><span>Dashboard</span></li>
+          <li><img className='images' src={Dashboard} alt="" /><span>Dashboard</span></li>
         </Link>
         <div>
-          <li onClick={handleDashboardDropdownClick}><img className='images' src={Dashboard} alt="" /> <span>Criminal Record</span><img className='images' src={Arrow2} alt="" /></li>
+          <li onClick={handleDashboardDropdownClick}><img className='images' src={Criminal} alt="" /> <span>Criminal Record</span><img className='images' src={Arrow2} alt="" /></li>
           {isDashboardDropdownOpen&& (
             <ul>
               <Link to='/viewCriminal' className="link">         
@@ -46,7 +46,7 @@ const Sidebar = () => {
         </div>
 
         <div>
-          <li onClick={handleCriminalDropdownClick}><img className='images' src={Criminal} alt="" /><span>Visitor's Record</span><img className='images' src={Arrow2} alt="" /></li>
+          <li onClick={handleCriminalDropdownClick}><img className='images' src={Visitors} alt="" /><span>Visitor's Record</span><img className='images' src={Arrow2} alt="" /></li>
           {isCriminalDropdownOpen && (
             <ul>
               <Link to='/viewVisitor' className="link">
@@ -60,14 +60,14 @@ const Sidebar = () => {
           )}
         </div>
         <Link to='/policeRecord' className="link">
-          <li><img className='images' src={Police} alt="" /><a href="#"><span>Police Profile</span></a></li>
+          <li><img className='images' src={Police} alt="" /><span>Police Profile</span></li>
         </Link>
 
         <Link to='/crimeCategories' className="link">
-          <li><img className='images' src={Crime} alt="" /><a href="#"><span>Crime Categories</span></a></li>
+          <li><img className='images' src={Crime} alt="" /><span>Crime Categories</span></li>
         </Link>
 
-          <li><img className='images' src={Logout} alt="" /><a href="#"><span>Logout</span></a></li>
+          <li><img className='images' src={Logout} alt="" /><span>Logout</span></li>
        
       </div>
     </div>
