@@ -3,6 +3,8 @@ import Visitor from '../../assets/visitors.svg'
 import Desmond from '../../assets/desmond.png'
 import Eye2 from '../../assets/eye2.png'
 
+import { Link } from 'react-router-dom'
+
 
 const ViewVisitors = () => {
   return (
@@ -58,7 +60,7 @@ const ViewVisitors = () => {
             <td>Rape</td>
             <td>1/06/2023</td>
             <td>Pending</td>
-            <td><img src={Eye2} alt="" /></td>
+            <td><Link to='/visitorProfile'><img src={Eye2} alt="" /></Link></td>
             <td>Pending</td>  
           </tr>
 

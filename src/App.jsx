@@ -16,6 +16,7 @@ import CrimeCategories from './Pages/crime-categories/Crime-Categories'
 import Navbar from './Components/Navbar'
 import Sidebar from './Components/Sidebar'
 import Footer from './Components/Footer'
+import VisitorProfile from './Pages/visitor-profile/Visitor-Profile'
 
 
 const App = () => {
@@ -32,7 +33,8 @@ const App = () => {
           <Route path= '/updateCriminal' element={<UpdateCriminal />} />
           <Route path='/addCriminal' element={<ACriminal />} />
           <Route path='/viewVisitor' element={<Visitor />} />
-          <Route path='/addVisitor' element={<Avisitor />} />
+          <Route path='visitorProfile' element={<VisitorProfile />} />
+          {/* <Route path='/addVisitor' element={<Avisitor />} /> */}
           <Route path='/policeRecord' element={<Police />} />
           <Route path='/policeProfile' element ={<PoliceProfile />} />
           <Route path='/crimeCategories' element={<CrimeCategories/>} />
