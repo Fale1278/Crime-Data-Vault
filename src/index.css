@@ -411,6 +411,7 @@ body{
   background: #0E346C;
   border: none;
   color: #FFF;
+  cursor: pointer;
   margin-top: 4rem;
   margin-left:20rem;
 }
@@ -650,5 +651,4 @@ tbody tr td{
   border-radius: 10px;
   background: #0E346C;
   border: none;
-
 }

@@ -7,6 +7,7 @@ import Criminal from './Pages/view-criminal/View-criminal-record'
 import CriminalProfile from './Pages/crime-profile/Criminal-Profile'
 import UpdateCriminal from './Pages/update-criminal/Update-Criminal'
 import ACriminal from './Pages/add-criminal-record/Add-criminal-record'
+import UpdateVisitor from './Pages/update-visitor/Update-Visitor'
 import Visitor from './Pages/view-visitor/View-visitors-record'
 import Avisitor from './Pages/add-visitors-record/Add-visitors-record'
 import Police from './Pages/police-records/Police-records'
@@ -32,8 +33,9 @@ const App = () => {
           <Route path= '/updateCriminal' element={<UpdateCriminal />} />
           <Route path='/addCriminal' element={<ACriminal />} />
           <Route path='/viewVisitor' element={<Visitor />} />
-          <Route path='visitorProfile' element={<VisitorProfile />} />
-          {/* <Route path='/addVisitor' element={<Avisitor />} /> */}
+          <Route path='/visitorProfile' element={<VisitorProfile />} />
+          <Route path='/updateVisitor' element={<UpdateVisitor />} />
+          <Route path='/addVisitor' element={<Avisitor />} />
           <Route path='/policeRecord' element={<Police />} />
           <Route path='/policeProfile' element ={<PoliceProfile />} />
           <Route path='/crimeCategories' element={<CrimeCategories/>} />

@@ -77,7 +77,7 @@ const VisitorProfile = () => {
       </div>
 
       <button className='update'>
-        <Link to='/updateCriminal' className='link'>Update Record</Link>
+        <Link to='/updateVisitor' className='link'>Update Record</Link>
       </button>
     </div>
   )
