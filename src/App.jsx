@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Router } from 'react-router-dom'
 
 import Home from './Pages/home/Home'
 import Criminal from './Pages/view-criminal/View-criminal-record'
@@ -24,8 +24,7 @@ const App = () => {
     <div className='main-ody'>
       <BrowserRouter>
         <Navbar />
-        <Sidebar />
-      
+        <Sidebar />    
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/viewCriminal' element={<Criminal />} />

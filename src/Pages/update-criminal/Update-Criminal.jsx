@@ -1,11 +1,24 @@
 import React from 'react'
+import { useState } from 'react'
 import Finger from '../../assets/fingerprint.png'
 import Capture from '../../assets/capture.png'
 
 
 const UpdateCriminal = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const openPopup = () => {
+    setIsOpen(true);
+  };
+
+  const closePopup = () => {
+    setIsOpen(false);
+  };
+
+
   return (
     <div className='criminal-record'>
+      
       <p className='add-text'>Update Criminal's  record</p>
 
       <div className="add-container">
@@ -83,9 +96,18 @@ const UpdateCriminal = () => {
             </div>
           </ul>
         </div>
-
+        
+       
       </div>
-        <button className='addBtn'>Update Record</button>
+        <button className='addBtn' onClick={openPopup}>Update Record</button>
+        {isOpen && (
+        <div className="popup">
+          <div className="popup-content">
+            <h2>Record Successfully Updated</h2>
+            <button onClick={closePopup}>Ok</button>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
