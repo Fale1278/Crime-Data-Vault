@@ -61,17 +61,17 @@ const UpdateCriminal = () => {
 
         <div className="add-box">
           <ul>
-            <p>Inmate Visited</p>
+            <p>Crime Committed </p>
             <input type="text" />
           </ul>
 
           <ul>
-            <p>Last Visit Date</p>
+            <p>Crime Date</p>
             <input type="date" />
           </ul>
 
           <ul>
-            <p>Relationship with inmate</p>
+            <p>Reported By</p>
             <input type="text" />
           </ul>
 

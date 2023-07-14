@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+
 import Police2 from '../../assets/police2.png'
 import Jesse from '../../assets/jesse.png'
 import Contact from '../../assets/contact.svg'
@@ -7,11 +9,14 @@ const PoliceProfile = () => {
   return (
     <div className='police-profile'>
       <div className='pol'>
-        <div>
-          <img src={Police2} alt="" /><span>Police Details</span>
-        </div>
+     
+            
+          <div>
+            <img src={Police2} alt="" /><span>Police Details</span>
+          </div>
 
-        <div className='back'><i class='bx bx-left-arrow-alt'></i><e>Back</e ></div>
+          <div className='back'><Link to='/policeRecord' className='back'><i class='bx bx-left-arrow-alt'></i>Back</Link></div>
+        
       </div>
 
       <div className="police-details-container">

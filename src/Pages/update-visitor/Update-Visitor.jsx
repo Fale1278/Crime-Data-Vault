@@ -89,7 +89,7 @@ const UpdateVisitor = () => {
                 <img src={Finger} alt="" />
               </ul>
 
-              <ul>
+              <ul> 
                 <p>Capture</p>
                 <img src={Capture} alt="" />
               </ul>

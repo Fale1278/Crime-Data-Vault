@@ -100,6 +100,10 @@ body{
   text-decoration: none;
   color: #fff;
 }
+.back{
+  text-decoration: none;
+  color: #0E346C;
+}
 
 .Navbar{
   position: fixed;
@@ -446,7 +450,7 @@ body{
   margin-left: 8rem;
   margin-bottom: .5rem;
   background: #1569E5;
-  padding: 1rem;
+  padding:.7rem 1rem ;
 }
 
 .view-records-container .entries2 ul{
@@ -527,13 +531,16 @@ tbody tr td{
 .pol{
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  position: static;
+  justify-content:space-between;
+  position: fixed;
+  margin: 5rem 0 0 18rem;
+  gap: 46.2rem;
+  z-index: -1000;
 
 }
 
 .pol div span{
-  font-size: 2rem;
+  font-size: 1.6rem;
   font-weight: 500;
   padding-left: .5rem;
 }

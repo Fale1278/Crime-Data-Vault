@@ -47,7 +47,6 @@ const ViewVisitors = () => {
           <th>CRIME DATE</th>
           <th>STATUS</th>
           <th>VIEW</th>
-          <th>SENTENCE</th>
         </thead>
 
         <tbody>
@@ -61,7 +60,7 @@ const ViewVisitors = () => {
             <td>1/06/2023</td>
             <td>Pending</td>
             <td><Link to='/visitorProfile'><img src={Eye2} alt="" /></Link></td>
-            <td>Pending</td>  
+           
           </tr>
 
           <tr>
@@ -74,7 +73,6 @@ const ViewVisitors = () => {
             <td>1/06/2023</td>
             <td>Pending</td>
             <td><img src={Eye2} alt="" /></td>
-            <td>Pending</td>  
           </tr>
 
           <tr>
@@ -87,7 +85,6 @@ const ViewVisitors = () => {
             <td>1/06/2023</td>
             <td>Pending</td>
             <td><img src={Eye2} alt="" /></td>
-            <td>Pending</td>  
           </tr>
 
           <tr>
@@ -100,7 +97,6 @@ const ViewVisitors = () => {
             <td>1/06/2023</td>
             <td>Pending</td>
             <td><img src={Eye2} alt="" /></td>
-            <td>Pending</td>  
           </tr>
 
           <tr>
@@ -113,7 +109,6 @@ const ViewVisitors = () => {
             <td>1/06/2023</td>
             <td>Pending</td>
             <td><img src={Eye2} alt="" /></td>
-            <td>Pending</td>  
           </tr>
 
           <tr>
@@ -126,7 +121,6 @@ const ViewVisitors = () => {
             <td>1/06/2023</td>
             <td>Pending</td>
             <td><img src={Eye2} alt="" /></td>
-            <td>Pending</td>  
           </tr>
 
           <tr>
@@ -139,7 +133,6 @@ const ViewVisitors = () => {
             <td>1/06/2023</td>
             <td>Pending</td>
             <td><img src={Eye2} alt="" /></td>
-            <td>Pending</td>  
           </tr>
 
           <tr>
@@ -152,7 +145,6 @@ const ViewVisitors = () => {
             <td>1/06/2023</td>
             <td>Pending</td>
             <td><img src={Eye2} alt="" /></td>
-            <td>Pending</td>  
           </tr>
 
           <tr>
@@ -165,7 +157,6 @@ const ViewVisitors = () => {
             <td>1/06/2023</td>
             <td>Pending</td>
             <td><img src={Eye2} alt="" /></td>
-            <td>Pending</td>  
           </tr>
 
           <tr>
@@ -178,7 +169,6 @@ const ViewVisitors = () => {
             <td>1/06/2023</td>
             <td>Pending</td>
             <td><img src={Eye2} alt="" /></td>
-            <td>Pending</td>  
           </tr>
 
           <tr>
@@ -191,7 +181,6 @@ const ViewVisitors = () => {
             <td>1/06/2023</td>
             <td>Pending</td>
             <td><img src={Eye2} alt="" /></td>
-            <td>Pending</td>  
           </tr>
 
           <tr>
@@ -204,7 +193,6 @@ const ViewVisitors = () => {
             <td>1/06/2023</td>
             <td>Pending</td>
             <td><img src={Eye2} alt="" /></td>
-            <td>Pending</td>  
           </tr>
 
           <tr>
@@ -217,7 +205,6 @@ const ViewVisitors = () => {
             <td>1/06/2023</td>
             <td>Pending</td>
             <td><img src={Eye2} alt="" /></td>
-            <td>Pending</td>  
           </tr>
 
           <tr>
@@ -230,7 +217,6 @@ const ViewVisitors = () => {
             <td>1/06/2023</td>
             <td>Pending</td>
             <td><img src={Eye2} alt="" /></td>
-            <td>Pending</td>  
           </tr>
 
           <tr>
@@ -243,7 +229,6 @@ const ViewVisitors = () => {
             <td>1/06/2023</td>
             <td>Pending</td>
             <td><img src={Eye2} alt="" /></td>
-            <td>Pending</td>  
           </tr>
         </tbody>
       </table>

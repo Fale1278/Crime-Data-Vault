@@ -10,10 +10,10 @@ const CriminalProfile = () => {
     <div className='police-profile'>
       <div className='pol'>
         <div>
-          <img src={Finger} alt="" /><span>Assailant Crime Details</span>
+          <img src={Finger} alt="" /><span> Criminal Details</span>
         </div>
 
-        <div className='back'><Link to='/viewCriminal' ><i class='bx bx-left-arrow-alt'></i><e>Back</e ></Link></div>
+        <div className='back'><Link to='/viewCriminal' className='back'><i class='bx bx-left-arrow-alt'></i><e>Back</e ></Link></div>
       </div>
 
       <div className="police-details-container">

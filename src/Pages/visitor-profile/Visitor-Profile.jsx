@@ -14,7 +14,7 @@ const VisitorProfile = () => {
           <img src={Police2} alt="" /><span>Visitor Details</span>
         </div>
 
-        <div className='back'><i class='bx bx-left-arrow-alt'></i><e>Back</e ></div>
+        <div className='back'><Link to='/viewVisitor' className='back'><i class='bx bx-left-arrow-alt'></i>Back</Link></div>
       </div>
 
       <div className="police-details-container">
