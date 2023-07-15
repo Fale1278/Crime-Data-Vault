@@ -51,7 +51,15 @@ body{
 .sidebar-container li:hover{
   display: flex;
   color: #C4C4C4;
-  
+ 
+}
+
+.sidebar-container li button{
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
 }
 
 .sidebar-container div ul .eyes{
@@ -652,6 +660,43 @@ tbody tr td{
   font-size: 2rem;
 }
 .popup-content button{
+  padding: .5rem 1rem;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 10px;
+  background: #0E346C;
+  border: none;
+}
+
+.popup2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content2 {
+  background-color: #fff;
+  text-align: center;
+  padding: 20px;
+  margin-left: 20rem;
+  margin-top: 20rem;
+  width: 25rem;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  position: absolute;
+}
+.popup-content2 h2{
+  margin-bottom: 3rem;
+  font-size: 2rem;
+}
+.popup-content2 button{
+  align-self: center;
+  margin-right: 3rem;
   padding: .5rem 1rem;
   color: #fff;
   cursor: pointer;
