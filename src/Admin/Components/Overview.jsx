@@ -1,5 +1,10 @@
 import React from 'react'
+
+import { Link } from 'react-router-dom'
+
 import Arrow from '../../assets/arrow.png'
+
+
 
 const Overview = () => {
   return (
@@ -7,27 +12,27 @@ const Overview = () => {
       <h3>Overview</h3>
       <div className="overview-container">
         <div className="overview-box">
-          <h1>6</h1>
+          <h1>0</h1>
           <h3>Criminals in Custody</h3>
-          <a href='#' className='info'><span>More info</span> <img src={Arrow} alt="" /></a>
+          <Link className='info'><span>More info</span> <img src={Arrow} alt="" /></Link>
         </div>
 
         <div className="overview-box">
-          <h1>4</h1>
+          <h1>0</h1>
           <h3>Visitors</h3>
-          <a href='#' className='info'><span>More info</span> <img src={Arrow} alt="" /></a>
+          <Link className='info'><span>More info</span> <img src={Arrow} alt="" /></Link>
         </div>
 
         <div className="overview-box">
-          <h1>20</h1>
+          <h1>0</h1>
           <h3>Officers</h3>
-          <a href='#' className='info'><span>More info</span> <img src={Arrow} alt="" /></a>
+          <Link href='#' className='info'><span>More info</span> <img src={Arrow} alt="" /></Link>
         </div>
 
         <div className="overview-box">
-          <h1>5</h1>
+          <h1>0</h1>
           <h3>Crime Categories</h3>
-          <a href='#' className='info'><span>More info</span> <img src={Arrow} alt="" /></a>
+          <Link className='info'><span>More info</span> <img src={Arrow} alt="" /></Link>
         </div>
       </div>
       

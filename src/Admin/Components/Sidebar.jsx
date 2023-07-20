@@ -6,7 +6,7 @@ import Visitors from '../../assets/visitors.png'
 import Police from '../../assets/police.png'
 import Crime from '../../assets/crime.png'
 import Logout from '../../assets/logout.png'
-import Officer from '../../assets/officer.png'
+import Officer from '../../assets/admin.png'
 import Arrow2  from '../../assets/arrow2.png'
 import Eye  from '../../assets/eye.png'
 import Plus  from '../../assets/plus.png'
@@ -26,7 +26,7 @@ const Sidebar = () => {
   return (
     <div className='sidebar'>
       <div className="sidebar-container">
-        <ul className='officer'><img src={Officer} alt="" /><span>Officer Salihu Musa</span></ul>
+        <ul className='officer'><img src={Officer} alt="" /><span>Admin Amina Sule</span></ul>
         <Link to='/' className="link">
           <li><img className='images' src={Dashboard} alt="" /><span>Dashboard</span></li>
         </Link>

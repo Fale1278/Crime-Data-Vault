@@ -2,8 +2,8 @@ import { PieChart } from 'react-minimal-pie-chart';
 
 const Chart = () => {
   const data = [
-    { value: 20 , title: 'Server Assault', color: '#124DA4' },
-    { value: 20, title: 'Cybercrime', color: '#1D54A6' },
+    { value: 15 , title: 'Server Assault', color: '#124DA4' },
+    { value: 25 , title: 'Cybercrime', color: '#1D54A6' },
     { value: 20, title: 'Kidnapping', color: '#15326A' },
     { value: 20, title: 'Robbery/Theft', color: '#1762D0' },
     { value: 20, title: 'Murder', color: '#336CC0' },

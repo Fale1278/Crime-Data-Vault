@@ -1,13 +1,45 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-
-import Finger from '../../../assets/fingerprint.png'
-import Desmond from '../../../assets/desmond.png'
-import Eye2 from '../../../assets/eye2.png'
-
-
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import Finger from '../../../assets/fingerprint.png';
+import Desmond from '../../../assets/desmond.png';
+import Eye2 from '../../../assets/eye2.png';
+import axios from 'axios';
 
 const ViewCriminal = () => {
+  const [searchQuery, setSearchQuery] = useState('');
+  const [criminalRecords, setCriminalRecords] = useState([]);
+  const [filteredCriminalRecords, setFilteredCriminalRecords] = useState([]);
+
+  useEffect(() => {
+    // Fetch the criminal records from the backend API
+    const fetchCriminalRecords = async () => {
+      try {
+        const response = await axios.get('/api/criminal-records'); // Replace with your API endpoint
+        setCriminalRecords(response.data);
+      } catch (error) {
+        console.error('Error fetching criminal records:', error);
+      }
+    };
+
+    fetchCriminalRecords();
+  }, []);
+
+  useEffect(() => {
+    // Filter the criminal records based on the search query
+    const filteredRecords = criminalRecords.filter(
+      (record) =>
+        record.firstName.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        record.lastName.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        record.crime.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+    setFilteredCriminalRecords(filteredRecords);
+  }, [searchQuery, criminalRecords]);
+
+  const handleSearchChange = (e) => {
+    const query = e.target.value;
+    setSearchQuery(query);
+  };
+
   return (
     <div className='view-record'>
       <div className="view-records-container">
@@ -32,227 +64,53 @@ const ViewCriminal = () => {
         </div>
 
         <div className="entries2">
-          <p><i class='bx bxs-filter-alt'></i>Filter Record</p>
-          <ul><span>Search: </span><input type="text" /></ul>
+          <p><i className='bx bxs-filter-alt'></i>Filter Record</p>
+          <ul>
+            <span>Search: </span>
+            <input type="text" value={searchQuery} onChange={handleSearchChange} />
+          </ul>
         </div>
       </div>
 
       <table>
         <thead className='thead'>
-          <th>ID</th>
-          <th>IMAGE</th>
-          <th>FIRST NAME</th>
-          <th>LAST NAME</th>
-          <th>GENDER</th>
-          <th>CRIME</th>
-          <th>CRIME DATE</th>
-          <th>STATUS</th>
-          <th>VIEW</th>
-          <th>SENTENCE</th>
+          <tr>
+            <th>ID</th>
+            <th>IMAGE</th>
+            <th>FIRST NAME</th>
+            <th>LAST NAME</th>
+            <th>GENDER</th>
+            <th>CRIME</th>
+            <th>CRIME DATE</th>
+            <th>STATUS</th>
+            <th>VIEW</th>
+            <th>SENTENCE</th>
+          </tr>
         </thead>
 
         <tbody>
-          <tr>
-            <td>1</td>
-            <td><img src={Desmond} alt="" /></td>
-            <td>Desmond</td>
-            <td>Fon Gwom</td>
-            <td>Male</td>
-            <td>Rape</td>
-            <td>1/06/2023</td>
-            <td>Pending</td>
-            <td><Link to='/criminalProfile'><img src={Eye2} alt="" /></Link></td>
-            <td>Pending</td>  
-          </tr>
-
-          <tr>
-            <td>2</td>
-            <td><img src={Desmond} alt="" /></td>
-            <td>Desmond</td>
-            <td>Fon Gwom</td>
-            <td>Male</td>
-            <td>Rape</td>
-            <td>1/06/2023</td>
-            <td>Pending</td>
-            <td><img src={Eye2} alt="" /></td>
-            <td>Pending</td>  
-          </tr>
-
-          <tr>
-            <td>3</td>
-            <td><img src={Desmond} alt="" /></td>
-            <td>Desmond</td>
-            <td>Fon Gwom</td>
-            <td>Male</td>
-            <td>Rape</td>
-            <td>1/06/2023</td>
-            <td>Pending</td>
-            <td><img src={Eye2} alt="" /></td>
-            <td>Pending</td>  
-          </tr>
-
-          <tr>
-            <td>4</td>
-            <td><img src={Desmond} alt="" /></td>
-            <td>Desmond</td>
-            <td>Fon Gwom</td>
-            <td>Male</td>
-            <td>Rape</td>
-            <td>1/06/2023</td>
-            <td>Pending</td>
-            <td><img src={Eye2} alt="" /></td>
-            <td>Pending</td>  
-          </tr>
-
-          <tr>
-            <td>5</td>
-            <td><img src={Desmond} alt="" /></td>
-            <td>Desmond</td>
-            <td>Fon Gwom</td>
-            <td>Male</td>
-            <td>Rape</td>
-            <td>1/06/2023</td>
-            <td>Pending</td>
-            <td><img src={Eye2} alt="" /></td>
-            <td>Pending</td>  
-          </tr>
-
-          <tr>
-            <td>6</td>
-            <td><img src={Desmond} alt="" /></td>
-            <td>Desmond</td>
-            <td>Fon Gwom</td>
-            <td>Male</td>
-            <td>Rape</td>
-            <td>1/06/2023</td>
-            <td>Pending</td>
-            <td><img src={Eye2} alt="" /></td>
-            <td>Pending</td>  
-          </tr>
-
-          <tr>
-            <td>7</td>
-            <td><img src={Desmond} alt="" /></td>
-            <td>Desmond</td>
-            <td>Fon Gwom</td>
-            <td>Male</td>
-            <td>Rape</td>
-            <td>1/06/2023</td>
-            <td>Pending</td>
-            <td><img src={Eye2} alt="" /></td>
-            <td>Pending</td>  
-          </tr>
-
-          <tr>
-            <td>8</td>
-            <td><img src={Desmond} alt="" /></td>
-            <td>Desmond</td>
-            <td>Fon Gwom</td>
-            <td>Male</td>
-            <td>Rape</td>
-            <td>1/06/2023</td>
-            <td>Pending</td>
-            <td><img src={Eye2} alt="" /></td>
-            <td>Pending</td>  
-          </tr>
-
-          <tr>
-            <td>9</td>
-            <td><img src={Desmond} alt="" /></td>
-            <td>Desmond</td>
-            <td>Fon Gwom</td>
-            <td>Male</td>
-            <td>Rape</td>
-            <td>1/06/2023</td>
-            <td>Pending</td>
-            <td><img src={Eye2} alt="" /></td>
-            <td>Pending</td>  
-          </tr>
-
-          <tr>
-            <td>10</td>
-            <td><img src={Desmond} alt="" /></td>
-            <td>Desmond</td>
-            <td>Fon Gwom</td>
-            <td>Male</td>
-            <td>Rape</td>
-            <td>1/06/2023</td>
-            <td>Pending</td>
-            <td><img src={Eye2} alt="" /></td>
-            <td>Pending</td>  
-          </tr>
-
-          <tr>
-            <td>11</td>
-            <td><img src={Desmond} alt="" /></td>
-            <td>Desmond</td>
-            <td>Fon Gwom</td>
-            <td>Male</td>
-            <td>Rape</td>
-            <td>1/06/2023</td>
-            <td>Pending</td>
-            <td><img src={Eye2} alt="" /></td>
-            <td>Pending</td>  
-          </tr>
-
-          <tr>
-            <td>12</td>
-            <td><img src={Desmond} alt="" /></td>
-            <td>Desmond</td>
-            <td>Fon Gwom</td>
-            <td>Male</td>
-            <td>Rape</td>
-            <td>1/06/2023</td>
-            <td>Pending</td>
-            <td><img src={Eye2} alt="" /></td>
-            <td>Pending</td>  
-          </tr>
-
-          <tr>
-            <td>13</td>
-            <td><img src={Desmond} alt="" /></td>
-            <td>Desmond</td>
-            <td>Fon Gwom</td>
-            <td>Male</td>
-            <td>Rape</td>
-            <td>1/06/2023</td>
-            <td>Pending</td>
-            <td><img src={Eye2} alt="" /></td>
-            <td>Pending</td>  
-          </tr>
-
-          <tr>
-            <td>14</td>
-            <td><img src={Desmond} alt="" /></td>
-            <td>Desmond</td>
-            <td>Fon Gwom</td>
-            <td>Male</td>
-            <td>Rape</td>
-            <td>1/06/2023</td>
-            <td>Pending</td>
-            <td><img src={Eye2} alt="" /></td>
-            <td>Pending</td>  
-          </tr>
-
-          <tr>
-            <td>15</td>
-            <td><img src={Desmond} alt="" /></td>
-            <td>Desmond</td>
-            <td>Fon Gwom</td>
-            <td>Male</td>
-            <td>Rape</td>
-            <td>1/06/2023</td>
-            <td>Pending</td>
-            <td><img src={Eye2} alt="" /></td>
-            <td>Pending</td>  
-          </tr>
+          {filteredCriminalRecords.map((record) => (
+            <tr key={record.id}>
+              <td>{record.id}</td>
+              <td><img src={record.image} alt="" /></td>
+              <td>{record.firstName}</td>
+              <td>{record.lastName}</td>
+              <td>{record.gender}</td>
+              <td>{record.crime}</td>
+              <td>{record.crimeDate}</td>
+              <td>{record.status}</td>
+              <td><Link to='/criminalProfile'><img src={Eye2} alt="" /></Link></td>
+              <td>{record.sentence}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
 
-      <p className='skip'><span><i class='bx bx-skip-previous'></i></span> <span>Prev | Next </span> <span><i class='bx bx-skip-next'></i></span></p>
-
+      <p className='skip'>
+        <span><i className='bx bx-skip-previous'></i></span> <span>Prev | Next </span> <span><i className='bx bx-skip-next'></i></span>
+      </p>
     </div>
-  )
-}
+  );
+};
 
-export default ViewCriminal
+export default ViewCriminal;
