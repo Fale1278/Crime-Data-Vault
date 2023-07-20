@@ -1,7 +1,7 @@
 import React from 'react'
-import Chart from '../../../User/Components/Chart'
-import Table from '../../../User/Components/Table'
-import Overview from '../../../User/Components/Overview'
+import Chart from '../../Components/Chart'
+import Table from '../../Components/Table'
+import Overview from '../../Components/Overview'
 
 const Home = () => {
   return (

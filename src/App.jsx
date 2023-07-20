@@ -1,50 +1,88 @@
-import React from 'react'
+import React, { createContext, useState, useContext } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import { BrowserRouter, Routes, Route, Router } from 'react-router-dom'
+// Import dashboard components
+import UserDashboard from './User/index';
+import AdminDashboard from './Admin/index';
+// import SuperAdminDashboard from './components/SuperAdmin/SuperAdminDashboard';
 
-import Home from './User/Pages/home/Home'
-import Criminal from './User/Pages/view-criminal/View-criminal-record'
-import CriminalProfile from './User/Pages/crime-profile/Criminal-Profile'
-import UpdateCriminal from './User/Pages/update-criminal/Update-Criminal'
-import ACriminal from './User/Pages/add-criminal-record/Add-criminal-record'
-import UpdateVisitor from './User/Pages/update-visitor/Update-Visitor'
-import Visitor from './User/Pages/view-visitor/View-visitors-record'
-import Avisitor from './User/Pages/add-visitors-record/Add-visitors-record'
-import Police from './User/Pages/police-records/Police-records'
-import PoliceProfile from './User/Pages/police-profile/Police-Profile'
-import CrimeCategories from './User/Pages/crime-categories/Crime-Categories'
+const AuthContext = createContext();
 
-import Navbar from './User/Components/Navbar'
-import Sidebar from './User/Components/Sidebar'
-import Footer from './User/Components/Footer'
-import VisitorProfile from './User/Pages/visitor-profile/Visitor-Profile'
+const useAuth = () => useContext(AuthContext);
 
+export default function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userRole, setUserRole] = useState('');
 
-const App = () => {
+  const handleLogin = (id, password) => {
+    // Simulated login logic with predefined credentials
+    if (id === 'user' && password === 'userpass') {
+      setIsLoggedIn(true);
+      setUserRole('user');
+      document.body.style.backgroundColor = 'rgb(221, 221, 221)';
+      document.body.style.backgroundImage = 'none';
+    } else if (id === 'admin' && password === 'adminpass') {
+      setIsLoggedIn(true);
+      setUserRole('admin');
+      document.body.style.backgroundColor = 'rgb(221, 221, 221)';
+      document.body.style.backgroundImage = 'none';
+    } else if (id === 'superadmin' && password === 'superadminpass') {
+      setIsLoggedIn(true);
+      setUserRole('superadmin');
+      document.body.style.backgroundColor = 'rgb(221, 221, 221)';
+      document.body.style.backgroundImage = 'none';
+    } else {
+      // If the login credentials are invalid, do not set isLoggedIn and userRole
+      alert('Sorry!!1 The details you provided are invalid');
+    }
+  };
+
   return (
-    <div className='main-ody'>
-      <BrowserRouter>
-        <Navbar />
-        <Sidebar />    
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/viewCriminal' element={<Criminal />} />
-          <Route path='/criminalProfile' element={<CriminalProfile />} />
-          <Route path= '/updateCriminal' element={<UpdateCriminal />} />
-          <Route path='/addCriminal' element={<ACriminal />} />
-          <Route path='/viewVisitor' element={<Visitor />} />
-          <Route path='/visitorProfile' element={<VisitorProfile />} />
-          <Route path='/updateVisitor' element={<UpdateVisitor />} />
-          <Route path='/addVisitor' element={<Avisitor />} />
-          <Route path='/policeRecord' element={<Police />} />
-          <Route path='/policeProfile' element ={<PoliceProfile />} />
-          <Route path='/crimeCategories' element={<CrimeCategories/>} />
-          
-        </Routes>
-        <Footer />
-      </BrowserRouter>
-    </div>
-  )
+    <AuthContext.Provider value={{ isLoggedIn, userRole, handleLogin }}>
+      <Router>
+        <div>
+          {isLoggedIn ? (
+            <>
+              {/* Render the appropriate dashboard component based on the userRole */}
+              {userRole === 'user' && <UserDashboard />}
+              {userRole === 'admin' && <AdminDashboard />}
+              {/* {userRole === 'superadmin' && <SuperAdminDashboard />} */}
+            </>
+          ) : (
+            <Routes>
+              {/* Login route */}
+              <Route path="/*" element={<LoginPage />} />
+            </Routes>
+          )}
+        </div>
+      </Router>
+    </AuthContext.Provider>
+  );
 }
 
-export default App
+// Login page component
+function LoginPage() {
+  const { handleLogin } = useAuth();
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    const id = e.target.elements.id.value;
+    const password = e.target.elements.password.value;
+    handleLogin(id, password);
+  };
+
+  return (
+    <div>
+      <div className='login'>
+        <h2>LOGIN</h2>
+        <form onSubmit={handleFormSubmit}>
+          <input type="text" placeholder="User ID" name='id' />
+          <input type="password" placeholder="Password" name='password' />
+          <button type='submit'>Login</button>
+        </form>
+      </div>
+    </div>
+  );
+}
+
+// ... Other dashboard components ...

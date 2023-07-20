@@ -24,14 +24,14 @@ const Chart = () => {
           }}
         />
       </div>
-      <div className="legend">
+      {/* <div className="legend">
         {data.map((item, index) => (
           <div key={index} className="legend-item">
             <div className="color-box" style={{ background: item.color }}></div>
             <div className="legend-text">{item.title}</div>
           </div>
         ))}
-      </div>     
+      </div>      */}
     </div>
   );
 }

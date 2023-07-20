@@ -11,9 +11,14 @@
 }
 
 body{
-  background: rgb(221, 221, 221);
   color: #FFF;
   font-weight: 500;
+  background-color: #27262c;
+  background-image: url(assets/Backimg.png);
+  background-repeat: no-repeat;
+  /* background: rgb(221, 221, 221); */
+  background-size: 100%;
+  width: 100%;
 }
 
 .main-body{
@@ -22,7 +27,7 @@ body{
   align-items: center;
   justify-content: center;
   border-bottom: 1px solid rgba(0, 0, 0, 0.68);
-  background: #FFF;
+  /* background: #FFF; */
 }
 .sidebar{
   position: fixed;
@@ -360,7 +365,7 @@ body{
   height: 4rem;
   padding-left: 18rem;
   margin-top: 10rem;
-  /* z-index: 100; */
+  z-index: 100;
 } 
 
 .criminal-record{
@@ -647,6 +652,7 @@ tbody tr td{
 
 .popup-content {
   background-color: #fff;
+  color: #000;
   text-align: center;
   padding: 20px;
   margin-left: 10rem;
@@ -703,4 +709,72 @@ tbody tr td{
   border-radius: 10px;
   background: #0E346C;
   border: none;
+}
+
+
+/* For Login  */
+.login{
+  text-align: center;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+.login div i{
+  color: #FFF;
+  position: absolute;
+
+}
+.login h2{
+  color: #fff;
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: .1rem;
+  line-height: normal;
+  margin-top: 10rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.login input{
+  background: none;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #fff;
+  display: block;
+  color: #FFF;
+  font-size: 16px;
+  font-weight: 400;
+  padding: .5rem;
+  margin: 2rem;
+  width: 25rem;
+  z-index: 1;
+}
+.login .loginLink{
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: #FFF;
+  font-size: 16px;
+  font-weight: 400;
+  background:  #4044ED;
+  padding: .7rem;
+  margin-top: 2.5rem;
+  width: 25rem;
+}
+.login button{
+  display: block;
+  text-align: center;
+  color: #FFF;
+  font-size: 16px;
+  font-weight: 400;
+  background:  #4044ED;
+  padding: .7rem;
+  margin: 2rem 0 0 2rem;
+  width: 25rem;
+  border: none;
+  cursor: pointer;
+  z-index: 1;
+}
+.login button:hover{
+  background: #292bc1;
 }
