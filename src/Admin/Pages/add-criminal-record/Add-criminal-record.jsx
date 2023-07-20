@@ -46,6 +46,16 @@ const AddCriminal = () => {
       });
   };
 
+  const [isOpen, setIsOpen] = useState(false);
+
+  const openPopup = () => {
+    setIsOpen(true);
+  };
+
+  const closePopup = () => {
+    setIsOpen(false);
+  };
+
   return (
     <div className='criminal-record'>
       <p className='add-text'>Add a New Criminal record</p>
@@ -150,11 +160,19 @@ const AddCriminal = () => {
           </ul>
         </div>
 
-        <button  className='addBtn' type='submit'>
-          Add Record
-        </button>
 
       </form>
+        <button  className='addBtn' type='submit' onClick={openPopup}>
+          Add Record
+        </button>
+        {isOpen && (
+        <div className="popup">
+          <div className="popup-content">
+            <h2>Record Successfully Updated</h2>
+            <button onClick={closePopup}>Ok</button>
+          </div>
+        </div>
+        )}
     </div>
   );
 };
