@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 import Finger from '../../../assets/fingerprint.png';
 import Capture from '../../../assets/capture.png';
 
@@ -21,6 +20,8 @@ const AddCriminal = () => {
     crimeDate: '',
     reportedBy: '',
     frequency: '',
+    fingerPrints: '',
+    facialCapture: '',
   });
 
   const handleInputChange = (e) => {
@@ -31,19 +32,50 @@ const AddCriminal = () => {
     });
   };
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
-    // Post the form data to the backend API endpoint
-    axios
-      .post('/api/criminal-records', formData) // Replace with your actual backend API endpoint
-      .then((response) => {
-        // Handle successful response (e.g., show success message, redirect, etc.)
-        console.log('Data posted successfully:', response.data);
-      })
-      .catch((error) => {
-        // Handle error (e.g., show error message)
-        console.error('Error posting data:', error);
+
+    try {
+      const response = await fetch('https://crime-database.onrender.com/officers/criminals', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       });
+
+      if (!response.ok) {
+        throw new Error('Request failed');
+      }
+
+      const data = await response.json();
+      console.log('Data posted successfully:', data);
+      // Optionally, you can reset the form after successful submission
+      setFormData({
+        firstName: '',
+        lastName: '',
+        dob: '',
+        gender: '',
+        state: '',
+        lga: '',
+        town: '',
+        height: '',
+        eyeColor: '',
+        bloodGroup: '',
+        hairColor: '',
+        weight: '',
+        crimeCommitted: '',
+        crimeDate: '',
+        reportedBy: '',
+        frequency: '',
+        fingerPrints: '',
+        facialCapture: '',
+      });
+      // Optionally, you can show a success popup here
+    } catch (error) {
+      console.error('Error posting data:', error);
+      // Optionally, you can show an error popup here
+    }
   };
 
   const [isOpen, setIsOpen] = useState(false);
@@ -72,7 +104,7 @@ const AddCriminal = () => {
           </ul>
 
           <ul>
-            <p>D.O.B</p>
+            <p>Date of Birth</p>
             <input type='date' name='dob' onChange={handleInputChange} value={formData.dob} />
           </ul>
 
@@ -149,30 +181,30 @@ const AddCriminal = () => {
             <div className='finger-capture'>
               <ul>
                 <p>Finger Print</p>
-                <img src={Finger} alt='' />
+                <input type='text' name='fingerPrints' onChange={handleInputChange} value={formData.fingerPrints} />
               </ul>
 
               <ul>
                 <p>Capture</p>
-                <img src={Capture} alt='' />
+                <input type='text' name='facialCapture' onChange={handleInputChange} value={formData.facialCapture} />
               </ul>
             </div>
           </ul>
         </div>
 
-
+        {/* Add a button to submit the form */}
+        <button type='submit'>Add Record</button>
       </form>
-        <button  className='addBtn' type='submit' onClick={openPopup}>
-          Add Record
-        </button>
-        {isOpen && (
-        <div className="popup">
-          <div className="popup-content">
+
+      {/* Add a popup to show success message */}
+      {isOpen && (
+        <div className='popup'>
+          <div className='popup-content'>
             <h2>Record Successfully Updated</h2>
             <button onClick={closePopup}>Ok</button>
           </div>
         </div>
-        )}
+      )}
     </div>
   );
 };

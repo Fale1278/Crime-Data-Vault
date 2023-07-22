@@ -35,19 +35,19 @@ const VisitorProfile = () => {
           </div>
 
           <div className="external2">
-            <p><b>First Name: </b> Jesse</p>
-            <p><b>Middle Name: </b>Jesse</p>
-            <p><b>Last Name: </b> Kanadi</p>
-            <p><b>Age: </b> 21</p>
-            <p><b>Sex: </b> Male</p>
-            <p><b>Nationality: </b> Nigerian</p>
-            <p><b>State: </b> Borno</p>
-            <p><b>LGA: </b> Hawul</p>
-            <p><b>Blood Group: </b> B+</p>
-            <p><b>Height: </b> 178 CM</p>
-            <p><b>Rank: </b> Sergeant</p>
-            <p><b>Marital Status: </b> Single</p>
-            <p><b>Address: </b> GGSS</p>
+            <p><b>First Name: </b> </p>
+            <p><b>Middle Name: </b></p>
+            <p><b>Last Name: </b> </p>
+            <p><b>Age: </b> </p>
+            <p><b>Sex: </b> </p>
+            <p><b>Nationality: </b> </p>
+            <p><b>State: </b> </p>
+            <p><b>LGA: </b> </p>
+            <p><b>Blood Group: </b> </p>
+            <p><b>Height: </b> </p>
+            <p><b>Rank: </b> </p>
+            <p><b>Marital Status: </b> </p>
+            <p><b>Address: </b> </p>
           </div>
         </div>
 
@@ -57,9 +57,9 @@ const VisitorProfile = () => {
           </div>
 
           <div className="external2">
-            <p><b>Contact Line: </b> 09123173100</p>
-            <p><b>Address: </b> Behind Toro Government Secondary School Toro</p>
-            <p><b>Next of Kin: </b> Musa Gyang</p>
+            <p><b>Contact Line: </b></p>
+            <p><b>Address: </b> </p>
+            <p><b>Next of Kin: </b></p>
           </div>
         </div>
 
@@ -69,9 +69,9 @@ const VisitorProfile = () => {
           </div>
 
           <div className="external2">
-            <p><b>Police ID: </b> NPF123456</p>
-            <p><b>Appointment Date: </b>10-02-2022</p>
-            <p><b>Current Station: </b> Anglo Jos Station</p>
+            <p><b>Police ID: </b> </p>
+            <p><b>Appointment Date: </b></p>
+            <p><b>Current Station: </b> </p>
           </div>
         </div> 
       </div>

@@ -35,7 +35,7 @@ const CrimeCategory = () => {
       <table className='table2'>
         <thead className='thead2'>
           <th>ID</th>
-          <th>IMAGE</th>
+          <th>CRIME CATEGORIES</th>
           <th>FIRST NAME</th>
           <th>LAST NAME</th>
         </thead>

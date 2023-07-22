@@ -51,7 +51,11 @@ export default function App() {
           ) : (
             <Routes>
               {/* Login route */}
-              <Route path="/*" element={<LoginPage />} />
+              <Route path="/" element={<LoginPage />} />
+              <Route path='/user' element={<UserDashboard />}>
+              </Route>
+
+              
             </Routes>
           )}
         </div>
