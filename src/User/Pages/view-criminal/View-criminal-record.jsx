@@ -5,7 +5,7 @@ import Desmond from '../../../assets/desmond.png';
 import Eye2 from '../../../assets/eye2.png';
 
 const ViewCriminal = () => {
-  const [searchQuery, setSearchQuery] = useState('');
+const [searchQuery, setSearchQuery] = useState('');
   const [criminalRecords, setCriminalRecords] = useState([]);
   const [filteredCriminalRecords, setFilteredCriminalRecords] = useState([]);
 
@@ -13,7 +13,7 @@ const ViewCriminal = () => {
     // Fetch the criminal records from the backend API
     const fetchCriminalRecords = async () => {
       try {
-        const response = await fetch('/api/criminal-records'); // Replace with your API endpoint
+        const response = await fetch('https://crime-database.onrender.com/officers/criminals'); // Replace with your API endpoint
         if (response.ok) {
           const data = await response.json();
           setCriminalRecords(data);
@@ -24,7 +24,6 @@ const ViewCriminal = () => {
         console.error('Error fetching criminal records:', error);
       }
     };
-
     fetchCriminalRecords();
   }, []);
 
@@ -32,8 +31,8 @@ const ViewCriminal = () => {
     // Filter the criminal records based on the search query
     const filteredRecords = criminalRecords.filter(
       (record) =>
-        record.firstName.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        record.lastName.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        record.firstname.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        record.lastname.toLowerCase().includes(searchQuery.toLowerCase()) ||
         record.crime.toLowerCase().includes(searchQuery.toLowerCase())
     );
     setFilteredCriminalRecords(filteredRecords);
@@ -97,8 +96,8 @@ const ViewCriminal = () => {
             <tr key={record.id}>
               <td>{record.id}</td>
               <td><img src={record.image} alt="" /></td>
-              <td>{record.firstName}</td>
-              <td>{record.lastName}</td>
+              <td>{record.firstname}</td>
+              <td>{record.lastname}</td>
               <td>{record.gender}</td>
               <td>{record.crime}</td>
               <td>{record.crimeDate}</td>

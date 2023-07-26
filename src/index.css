@@ -406,6 +406,7 @@ body{
 .add-box .biometric{
   text-align: center;
   padding-top: 2rem;
+  padding-right: 10rem;
 }
 
 .add-box .biometric .finger-capture{
