@@ -13,7 +13,7 @@ const [searchQuery, setSearchQuery] = useState('');
     // Fetch the criminal records from the backend API
     const fetchCriminalRecords = async () => {
       try {
-        const response = await fetch('https://crime-database.onrender.com/officers/criminals'); // Replace with your API endpoint
+        const response = await fetch('https://crime-vault-database.onrender.com/officers/criminals'); // Replace with your API endpoint
         if (response.ok) {
           const data = await response.json();
           setCriminalRecords(data);
@@ -100,7 +100,7 @@ const [searchQuery, setSearchQuery] = useState('');
               <td>{record.lastname}</td>
               <td>{record.gender}</td>
               <td>{record.crime}</td>
-              <td>{record.crimeDate}</td>
+              <td>{record.dateCommitted}</td>
               <td>{record.status}</td>
               <td><Link to='/criminalProfile'><img src={Eye2} alt="" /></Link></td>
               <td>{record.sentence}</td>

@@ -11,7 +11,7 @@ const CriminalProfile = () => {
     // Fetch the criminal records from the backend API
     const fetchCriminalRecords = async () => {
       try {
-        const response = await fetch('https://crime-database.onrender.com/officers/criminals'); // Replace with your API endpoint
+        const response = await fetch('https://crime-vault-database.onrender.com/officers/addcriminal'); // Replace with your API endpoint
         if (response.ok) {
           const data = await response.json();
           setCriminalRecords(data);
@@ -63,10 +63,10 @@ const CriminalProfile = () => {
               <p><b>Middle Name: </b>{record.middleName}</p>
               <p><b>Last Name: </b>{record.lastName}</p>
               <p><b>Age: </b>{record.age}</p>
-              <p><b>Sex: </b>{record.sex}</p>
+              <p><b>Sex: </b>{record.gender}</p>
               <p><b>Nationality: </b>{record.nationality}</p>
               <p><b>State: </b>{record.state}</p>
-              <p><b>LGA: </b>{record.lga}</p>
+              <p><b>LGA: </b>{record.LGA}</p>
               <p><b>Blood Group: </b>{record.bloodGroup}</p>
               <p><b>Height: </b>{record.height}</p>
               <p><b>Occupation: </b>{record.occupation}</p>
@@ -80,12 +80,12 @@ const CriminalProfile = () => {
               <h1><img src={Contact} alt="" /><span>Emergency Contact</span></h1>
             </div>
             <div className="external2">
-              <p><b>First Name: </b>{record.emergencyFirstName}</p>
-              <p><b>Middle Name: </b>{record.emergencyMiddleName}</p>
-              <p><b>Last Name: </b>{record.emergencyLastName}</p>
+              <p><b>First Name: </b>{record.Contactfirstname}</p>
+              <p><b>Middle Name: </b>{record.Contactmiddlename}</p>
+              <p><b>Last Name: </b>{record.Contactlastname}</p>
               <p><b>Contact Line: </b>{record.contactLine}</p>
-              <p><b>Address: </b>{record.emergencyAddress}</p>
-              <p><b>Relationship: </b>{record.relationship}</p>
+              <p><b>Address: </b>{record.contactaddress}</p>
+              <p><b>Relationship: </b>{record.contactRelationship}</p>
             </div>
           </div>
 

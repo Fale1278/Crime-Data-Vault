@@ -5,23 +5,38 @@ import Capture from '../../../assets/capture.png';
 const AddCriminal = () => {
   const [formData, setFormData] = useState({
     firstname: '',
+    age: '',
+    Contactfirstname: '',
+    Contactlastname : '',
+    Contactmiddlename : '',
+    contactaddress: '',
+    middlename: '',
+    maritalStatus: '',
+    sentence: '',
+    dateCommitted: '',
+    dateConvicted: '',
+    contactNumber: '',
+    correctionalCenter: '',
+    contactRelationship: '',
+    contactLine: '',
     lastname: '',
-    DOB: '',
     crime: '',
+    address :'',
+    DOB: '',
     occupation: '',
-    phoneNumber: '',
-    town: '',
-    address: '',
-    state: '',
-    height: '',
-    eyecolor: '',
-    weight: '',
     gender: '',
-    status: '',
-    haircolor: '',
-    LGA: '',
     category: '',
+    LGA: '',
+    town: '',
+    nationality: '',
+    state: '',
+    status: '',
+    height: '',
+    reportedBy:'',
     bloodGroup: '',
+    weight: '',
+    eyecolor: '',
+    haircolor: '',
   });
 
   const [isSuccessPopupOpen, setSuccessPopupOpen] = useState(false);
@@ -37,7 +52,7 @@ const AddCriminal = () => {
 
   const postFormData = async () => {
     try {
-      const response = await fetch('https://crime-database.onrender.com/officers/addcriminal', {
+      const response = await fetch('https://crime-vault-database.onrender.com/officers/addcriminal', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -65,23 +80,38 @@ const AddCriminal = () => {
         // Optionally, you can reset the form after successful submission
         setFormData({
           firstname: '',
+          age: '',
+          Contactfirstname: '',
+          Contactlastname : '',
+          Contactmiddlename : '',
+          contactaddress: '',
+          middlename: '',
+          maritalStatus: '',
+          sentence: '',
+          dateCommitted: '',
+          dateConvicted: '',
+          contactNumber: '',
+          correctionalCenter: '',
+          contactRelationship: '',
+          contactLine: '',
           lastname: '',
-          DOB: '',
           crime: '',
+          address :'',
+          DOB: '',
           occupation: '',
-          phoneNumber: '',
-          town: '',
-          address: '',
-          state: '',
-          height: '',
-          eyecolor: '',
-          weight: '',
           gender: '',
-          status: '',
-          haircolor: '',
-          LGA: '',
           category: '',
+          LGA: '',
+          town: '',
+          state: '',
+          nationality: '',
+          status: '',
+          height: '',
+          reportedBy:'',
           bloodGroup: '',
+          weight: '',
+          eyecolor: '',
+          haircolor: '',
         });
       } else {
         setErrorPopupOpen(true);
@@ -118,6 +148,11 @@ const AddCriminal = () => {
           </ul>
 
           <ul>
+            <p>Middle Name</p>
+            <input type='text' name='middlename' onChange={handleInputChange} value={formData.middlename} />
+          </ul>
+
+          <ul>
             <p>Last Name</p>
             <input type='text' name='lastname' onChange={handleInputChange} value={formData.lastname} />
           </ul>
@@ -128,8 +163,18 @@ const AddCriminal = () => {
           </ul>
 
           <ul>
+            <p>Age</p>
+            <input type='text' name='age' onChange={handleInputChange} value={formData.age} />
+          </ul>
+
+          <ul>
             <p>Gender</p>
             <input type='text' name='gender' onChange={handleInputChange} value={formData.gender} />
+          </ul>
+
+          <ul>
+            <p>Nationality</p>
+            <input type='text' name='nationality' onChange={handleInputChange} value={formData.nationality} />
           </ul>
 
           <ul>
@@ -145,6 +190,21 @@ const AddCriminal = () => {
           <ul>
             <p>Town</p>
             <input type='text' name='town' onChange={handleInputChange} value={formData.town} />
+          </ul>
+
+          <ul>
+            <p>Address</p>
+            <input type='text' name='address' onChange={handleInputChange} value={formData.address} />
+          </ul>
+
+          <ul>
+            <p>Occupation</p>
+            <input type='text' name='occupation' onChange={handleInputChange} value={formData.occupation} />
+          </ul>
+
+          <ul>
+            <p>Marital Status</p>
+            <input type='text' name='maritalStatus' onChange={handleInputChange} value={formData.maritalStatus} />
           </ul>
 
           <ul>
@@ -203,23 +263,33 @@ const AddCriminal = () => {
           </ul>
 
           <ul>
+            <p>Category</p>
+            <input type='text' name='category' onChange={handleInputChange} value={formData.category} />
+          </ul>
+
+          <ul>
             <p>Crime Date</p>
-            <input type='date' name='crimeDate' onChange={handleInputChange} value={formData.crimeDate} />
+            <input type='date' name='dateCommitted' onChange={handleInputChange} value={formData.dateCommitted} />
           </ul>
 
           <ul>
             <p>Date Convicted</p>
-            <input type='text' name='reportedBy' onChange={handleInputChange} value={formData.reportedBy} />
+            <input type='date' name='dateConvicted' onChange={handleInputChange} value={formData.dateConvicted} />
           </ul>
 
           <ul>
             <p>Correctional Centre</p>
-            <input type='text' name='reportedBy' onChange={handleInputChange} value={formData.reportedBy} />
+            <input type='text' name='correctionalCenter' onChange={handleInputChange} value={formData.correctionalCenter} />
           </ul>
 
           <ul>
             <p>Sentence</p>
-            <input type='text' name='reportedBy' onChange={handleInputChange} value={formData.reportedBy} />
+            <input type='text' name='sentence' onChange={handleInputChange} value={formData.sentence} />
+          </ul>
+
+          <ul>
+            <p>Status</p>
+            <input type='text' name='status' onChange={handleInputChange} value={formData.status} />
           </ul>
 
           <ul>
@@ -238,32 +308,32 @@ const AddCriminal = () => {
 
           <ul>
             <p>First Name</p>
-            <input type='text' name='frequency' onChange={handleInputChange} value={formData.frequency} />
+            <input type='text' name='Contactfirstname' onChange={handleInputChange} value={formData.Contactfirstname} />
           </ul>
 
           <ul>
             <p>Middle Name</p>
-            <input type='text' name='frequency' onChange={handleInputChange} value={formData.frequency} />
+            <input type='text' name='Contactmiddlename' onChange={handleInputChange} value={formData.Contactmiddlename} />
           </ul>
 
           <ul>
             <p>Last Name</p>
-            <input type='text' name='frequency' onChange={handleInputChange} value={formData.frequency} />
+            <input type='text' name='Contactlastname' onChange={handleInputChange} value={formData.Contactlastname} />
           </ul>
 
           <ul>
             <p>Contact Line</p>
-            <input type='text' name='frequency' onChange={handleInputChange} value={formData.frequency} />
+            <input type='text' name='contactLine' onChange={handleInputChange} value={formData.contactLine} />
           </ul>
 
           <ul>
             <p>Address</p>
-            <input type='text' name='frequency' onChange={handleInputChange} value={formData.frequency} />
+            <input type='text' name='contactaddress' onChange={handleInputChange} value={formData.contactaddress} />
           </ul>
 
           <ul>
             <p>Relationship</p>
-            <input type='text' name='frequency' onChange={handleInputChange} value={formData.frequency} />
+            <input type='text' name='contactRelationship' onChange={handleInputChange} value={formData.contactRelationship} />
           </ul>
         </div>
 
