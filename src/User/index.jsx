@@ -31,7 +31,7 @@ const index = () => {
         <Routes>
           <Route path='/' element={<TableChart />} />
           <Route path='/viewCriminal' element={<ViewCriminal />} />
-          <Route path='/criminalProfile' element={<CriminalProfile />} />
+          <Route path='/criminalProfile/:id' element={<CriminalProfile />} />
           <Route path='/updateCriminal' element={<UpdateCriminal />} />
           <Route path='/addCriminal' element={<AddCriminal />} />
           <Route path='/viewVisitor' element={<ViewVisitor />} />

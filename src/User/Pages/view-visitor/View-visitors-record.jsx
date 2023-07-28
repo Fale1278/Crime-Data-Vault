@@ -18,7 +18,7 @@ const ViewVisitors = () => {
     // Fetch the criminal records from the backend API
     const fetchCriminalRecords = async () => {
       try {
-        const response = await fetch('https://crime-vault-database.onrender.com/officers/addvisitor'); // Replace with your API endpoint
+        const response = await fetch('https://crime-vault-database.onrender.com/officers/criminals'); // Replace with your API endpoint
         if (response.ok) {
           const data = await response.json();
           setVisitorRecord(data);
@@ -83,9 +83,8 @@ const ViewVisitors = () => {
           <th>FIRST NAME</th>
           <th>LAST NAME</th>
           <th>GENDER</th>
-          <th>CRIME</th>
-          <th>CRIME DATE</th>
-          <th>STATUS</th>
+          <th>VISITED</th>
+          <th>RELATIONSHIP</th>
           <th>VIEW</th>
         </thead>
 
@@ -93,15 +92,13 @@ const ViewVisitors = () => {
         {filteredVisitorRecord.map((record) => (
             <tr key={record.id}>
               <td>{record.id}</td>
-              <td><img src={record.image} alt="" /></td>
+              <td><img src={record.image} alt="" style={{width: '2rem'}}/></td>
               <td>{record.firstname}</td>
               <td>{record.lastname}</td>
               <td>{record.gender}</td>
               <td>{record.crime}</td>
               <td>{record.dateCommitted}</td>
-              <td>{record.status}</td>
               <td><Link to='/criminalProfile'><img src={Eye2} alt="" /></Link></td>
-              <td>{record.sentence}</td>
             </tr>
           ))}
         </tbody>

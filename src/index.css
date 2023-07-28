@@ -488,7 +488,6 @@ table{
   margin-top: 1rem;
   margin-right: 1rem;
   text-align: center;
-  height: 1000px;
 }
 
 .thead, th{
@@ -499,6 +498,7 @@ table{
   font-size: 14px;
   font-weight: 400;
 }
+
 .table2{
   margin-right: 1rem;
   text-align: center;

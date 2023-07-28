@@ -1,11 +1,12 @@
+// ViewCriminal.js
+
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Finger from '../../../assets/fingerprint.png';
-import Desmond from '../../../assets/desmond.png';
 import Eye2 from '../../../assets/eye2.png';
 
 const ViewCriminal = () => {
-const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState('');
   const [criminalRecords, setCriminalRecords] = useState([]);
   const [filteredCriminalRecords, setFilteredCriminalRecords] = useState([]);
 
@@ -13,7 +14,7 @@ const [searchQuery, setSearchQuery] = useState('');
     // Fetch the criminal records from the backend API
     const fetchCriminalRecords = async () => {
       try {
-        const response = await fetch('https://crime-vault-database.onrender.com/officers/criminals'); // Replace with your API endpoint
+        const response = await fetch('https://crime-vault-database.onrender.com/officers/criminals');
         if (response.ok) {
           const data = await response.json();
           setCriminalRecords(data);
@@ -95,14 +96,14 @@ const [searchQuery, setSearchQuery] = useState('');
           {filteredCriminalRecords.map((record) => (
             <tr key={record.id}>
               <td>{record.id}</td>
-              <td><img src={record.image} alt="" /></td>
+              <td><img src={record.image} alt="" style={{ width: '2rem', paddingTop: '2px' }} /></td>
               <td>{record.firstname}</td>
               <td>{record.lastname}</td>
               <td>{record.gender}</td>
               <td>{record.crime}</td>
               <td>{record.dateCommitted}</td>
               <td>{record.status}</td>
-              <td><Link to='/criminalProfile'><img src={Eye2} alt="" /></Link></td>
+              <td><Link to={`/criminalProfile/${record.id}`}><img src={Eye2} alt="" /></Link></td>
               <td>{record.sentence}</td>
             </tr>
           ))}
