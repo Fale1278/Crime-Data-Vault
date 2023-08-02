@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Finger from '../../../assets/fingerprint.png';
 import Capture from '../../../assets/capture.png';
 
-const AddCriminal = () => {
+const AddPolice = () => {
   const [formData, setFormData] = useState({
     firstname: '',
     lastname: '',
@@ -314,4 +314,4 @@ const AddCriminal = () => {
   );
 };
 
-export default AddCriminal;
+export default AddPolice;
