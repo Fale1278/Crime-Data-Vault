@@ -29,7 +29,7 @@ const CriminalProfile = () => {
   }, [id]);
 
   if (!criminalRecord) {
-    return <div>Loading...</div>;
+    return <div style={{marginRight: '18rem'}}>Loading...</div>;
   }
 
   return (

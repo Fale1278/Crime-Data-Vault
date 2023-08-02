@@ -51,8 +51,8 @@ const ViewCriminal = () => {
           <p><img src={Finger} alt="" /><span>Criminal Records</span></p>
           <p>Show 
             <select name="" id="">
-              <option value="">0</option>
-              <option value="1">1</option>
+              <option value="">0</option>78
+              <option value="1">1</option>66
               <option value="2">2</option>
               <option value="3">3</option>
               <option value="4">4</option>

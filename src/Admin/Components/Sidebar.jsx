@@ -14,6 +14,7 @@ import Plus  from '../../assets/plus.png'
 const Sidebar = () => {
   const [isDashboardDropdownOpen, setIsDashboardDropdownOpen] = useState(false);
   const [isCriminalDropdownOpen, setIsCriminalDropdownOpen] = useState(false);
+  const [isRegisterDropdownOpen, setIsRegisterDropdownOpen] =useState (false)
 
   const handleDashboardDropdownClick = () => {
     setIsDashboardDropdownOpen(!isDashboardDropdownOpen);
@@ -22,6 +23,10 @@ const Sidebar = () => {
   const handleCriminalDropdownClick = () => {
     setIsCriminalDropdownOpen(!isCriminalDropdownOpen);
   };
+
+  const handleRegisterDropdownClick = () => {
+    setIsRegisterDropdownOpen(!isRegisterDropdownOpen)
+  }
 
   return (
     <div className='sidebar'>
@@ -37,35 +42,46 @@ const Sidebar = () => {
               <Link to='/viewCriminal' className="link">         
                 <li className='eyes'><img className='images' src={Eye} alt="" />View Criminal Record</li>
               </Link>
+            </ul>
+          )}
+        </div>
 
-              <Link to='/addCriminal' className="link">
-                <li className='eyes'><img className='images' src={Plus} alt="" />Add Criminal Record</li>
+        <div>
+          <li onClick={handleRegisterDropdownClick}><img className='images' src={Visitors} alt="" /><span>Visitor's Record</span><img className='images' src={Arrow2} alt="" /></li>
+          {isRegisterDropdownOpen && (
+            <ul>
+              <Link to='/viewVisitor' className="link">
+                <li className='eyes'><img className='images' src={Eye} alt="" />View Visitor's Record</li>
               </Link>
             </ul>
           )}
         </div>
 
         <div>
-          <li onClick={handleCriminalDropdownClick}><img className='images' src={Visitors} alt="" /><span>Visitor's Record</span><img className='images' src={Arrow2} alt="" /></li>
+          <li onClick={handleCriminalDropdownClick}><img className='images' src={Visitors} alt="" /><span>Register Police</span><img className='images' src={Arrow2} alt="" /></li>
           {isCriminalDropdownOpen && (
             <ul>
-              <Link to='/viewVisitor' className="link">
-                <li className='eyes'><img className='images' src={Eye} alt="" />View Visitor's Record</li>
+              <Link to='/registerPolice' className="link">
+                <li className='eyes'><img className='images' src={Plus} alt="" />New Police</li>
               </Link>
 
-              <Link to='/addVisitor' className="link">
-                <li className='eyes'><img className='images' src={Plus} alt="" />Add Visitor's Record</li>
+              <Link to='/viewVisitor' className="link">
+                <li className='eyes'><img className='images' src={Plus} alt="" />Assign to Station</li>
               </Link>
             </ul>
           )}
         </div>
+
+
         <Link to='/policeRecord' className="link">
-          <li><img className='images' src={Police} alt="" /><span>Police Profile</span></li>
+          <li><img className='images' src={Police} alt="" /><span>Police Record</span></li>
         </Link>
 
         <Link to='/crimeCategories' className="link">
           <li><img className='images' src={Crime} alt="" /><span>Crime Categories</span></li>
         </Link>
+
+        
 
           <li><img className='images' src={Logout} alt="" /><span>Logout</span></li>
        

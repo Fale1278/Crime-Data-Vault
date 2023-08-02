@@ -6,10 +6,9 @@ import Footer from './Components/Footer'
 import TableChart from '../Admin/Pages/Table-chart/TableChart'
 import ViewCriminal from '../Admin/Pages/view-criminal/View-criminal-record'
 import CriminalProfile from '../Admin/Pages/crime-profile/Criminal-Profile'
-import AddCriminal from '../Admin/Pages/add-criminal-record/Add-criminal-record'
 import ViewVisitor from '../Admin/Pages/view-visitor/View-visitors-record'
-import AddVisitor from '../Admin/Pages/add-visitors-record/Add-visitors-record'
 import PoliceRecord from '../Admin/Pages/police-records/Police-records'
+import REgisterPolice from '../Admin/Pages/Register-Police/RegisterPolice'
 import CrimeCategory from '../Admin/Pages/crime-categories/Crime-Categories'
 
 const index = () => {
@@ -28,10 +27,9 @@ const index = () => {
         <Route path='/' element={<TableChart />} />
         <Route path='/viewCriminal' element={<ViewCriminal />} />
         <Route path='/criminalProfile' element={<CriminalProfile />} />
-        <Route path='/addCriminal' element={<AddCriminal />} />
         <Route path='/viewVisitor' element={<ViewVisitor />} />
-        <Route path='/addVisitor' element={<AddVisitor />} />
         <Route path='/policeRecord' element={<PoliceRecord />} />
+        <Route path='/registerPolice' element={<REgisterPolice />} />
         <Route path='/crimeCategories' element={<CrimeCategory />} />
         </Routes> 
         <Footer />
