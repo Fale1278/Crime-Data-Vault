@@ -8,6 +8,7 @@ import ViewCriminal from '../Admin/Pages/view-criminal/View-criminal-record'
 import CriminalProfile from '../Admin/Pages/crime-profile/Criminal-Profile'
 import ViewVisitor from '../Admin/Pages/view-visitor/View-visitors-record'
 import PoliceRecord from '../Admin/Pages/police-records/Police-records'
+import AssignPolice from '../Admin/Pages/Assign-Police/AssignPolice'
 import RegisterPolice from '../Admin/Pages/Register-Police/RegisterPolice'
 import CrimeCategory from '../Admin/Pages/crime-categories/Crime-Categories'
 
@@ -30,6 +31,7 @@ const index = () => {
         <Route path='/viewVisitor' element={<ViewVisitor />} />
         <Route path='/policeRecord' element={<PoliceRecord />} />
         <Route path='/registerPolice' element={<RegisterPolice />} />
+        <Route path='/assignPolice' element={<AssignPolice />} />
         <Route path='/crimeCategories' element={<CrimeCategory />} />
         </Routes> 
         <Footer />

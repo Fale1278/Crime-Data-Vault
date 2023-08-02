@@ -25,6 +25,7 @@ const AddCriminal = () => {
     DOB: '',
     occupation: '',
     gender: '',
+    complexion: '',
     category: '',
     LGA: '',
     town: '',
@@ -96,9 +97,9 @@ const AddCriminal = () => {
           contactLine: '',
           lastname: '',
           crime: '',
+          complexion: '',
           address :'',
           DOB: '',
-          occupation: '',
           gender: '',
           category: '',
           LGA: '',
@@ -213,8 +214,18 @@ const AddCriminal = () => {
           </ul>
 
           <ul>
+            <p>Weight</p>
+            <input type='text' name='weight' onChange={handleInputChange} value={formData.weight} />
+          </ul>
+
+          <ul>
             <p>Eye Color</p>
             <input type='text' name='eyecolor' onChange={handleInputChange} value={formData.eyecolor} />
+          </ul>
+
+          <ul>
+            <p>Skin Color</p>
+            <input type='text' name='complexion' onChange={handleInputChange} value={formData.complexion} />
           </ul>
 
           <ul>
@@ -225,29 +236,6 @@ const AddCriminal = () => {
           <ul>
             <p>Hair Color</p>
             <input type='text' name='haircolor' onChange={handleInputChange} value={formData.haircolor} />
-          </ul>
-
-          <ul>
-            <p>Weight</p>
-            <input type='text' name='weight' onChange={handleInputChange} value={formData.weight} />
-          </ul>
-
-          <ul className='biometric'>
-            <p>Biometric Capture</p>
-
-            <div className='finger-capture'>
-              <ul>
-                <p>Finger Print</p>
-                <img src={Finger} alt='' />
-                {/* <input type='text' name='fingerPrints' onChange={handleInputChange} value={formData.fingerPrints} /> */}
-              </ul>
-
-              <ul>
-                <p>Capture</p>
-                <img src={Capture} alt='' />
-                {/* <input type='file' name='facialCapture' onChange={handleInputChange} value={formData.facialCapture} /> */}
-              </ul>
-            </div>
           </ul>
         </div>
 
@@ -334,6 +322,25 @@ const AddCriminal = () => {
           <ul>
             <p>Relationship</p>
             <input type='text' name='contactRelationship' onChange={handleInputChange} value={formData.contactRelationship} />
+          </ul>
+
+          
+          <ul className='biometric'>
+            <p>Biometric Capture</p>
+
+            <div className='finger-capture'>
+              <ul>
+                <p>Finger Print</p>
+                <img src={Finger} alt='' />
+                {/* <input type='text' name='fingerPrints' onChange={handleInputChange} value={formData.fingerPrints} /> */}
+              </ul>
+
+              <ul>
+                <p>Capture</p>
+                <img src={Capture} alt='' />
+                {/* <input type='file' name='facialCapture' onChange={handleInputChange} value={formData.facialCapture} /> */}
+              </ul>
+            </div>
           </ul>
         </div>
 
