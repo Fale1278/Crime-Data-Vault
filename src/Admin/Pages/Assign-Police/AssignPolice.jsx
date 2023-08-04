@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import Finger from '../../../assets/fingerprint.png';
-import Capture from '../../../assets/capture.png';
 
 const AddPolice = () => {
   const [formData, setFormData] = useState({
@@ -83,8 +81,8 @@ const AddPolice = () => {
 
   return (
     <div className='criminal-record'>
-      <p className='add-text'>Assign Officer To Station</p>
-      <form className='add-container' onSubmit={handleFormSubmit}>
+      <p className='add-text' >Assign Officer To Station</p>
+      <form className='add-container2' onSubmit={handleFormSubmit}>
         <div className='add-box'>
           <ul style={{marginBottom: '3rem'}}>
             <h3>Enter Assigning Details</h3>
@@ -124,9 +122,9 @@ const AddPolice = () => {
             <p>Station</p>
             <input type='text' name='station' onChange={handleInputChange} value={formData.station} />
           </ul>
+        <button type='submit' className='addBtn2'>Add Record</button>
         </div>
 
-        <button type='submit' className='addBtn'>Add Record</button>
       </form>
 
       {/* Success Popup */}

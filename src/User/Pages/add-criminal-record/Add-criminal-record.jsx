@@ -96,6 +96,7 @@ const AddCriminal = () => {
           contactRelationship: '',
           contactLine: '',
           lastname: '',
+          occupation: '',
           crime: '',
           complexion: '',
           address :'',

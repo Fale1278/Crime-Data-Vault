@@ -1,9 +1,9 @@
+// ViewCriminal.js
+
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Finger from '../../../assets/fingerprint.png';
-import Desmond from '../../../assets/desmond.png';
 import Eye2 from '../../../assets/eye2.png';
-import axios from 'axios';
 
 const ViewCriminal = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -14,13 +14,17 @@ const ViewCriminal = () => {
     // Fetch the criminal records from the backend API
     const fetchCriminalRecords = async () => {
       try {
-        const response = await axios.get('/api/criminal-records'); // Replace with your API endpoint
-        setCriminalRecords(response.data);
+        const response = await fetch('https://crime-vault-database.onrender.com/officers/criminals');
+        if (response.ok) {
+          const data = await response.json();
+          setCriminalRecords(data);
+        } else {
+          console.error('Error fetching criminal records:', response.status);
+        }
       } catch (error) {
         console.error('Error fetching criminal records:', error);
       }
     };
-
     fetchCriminalRecords();
   }, []);
 
@@ -28,8 +32,8 @@ const ViewCriminal = () => {
     // Filter the criminal records based on the search query
     const filteredRecords = criminalRecords.filter(
       (record) =>
-        record.firstName.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        record.lastName.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        record.firstname.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        record.lastname.toLowerCase().includes(searchQuery.toLowerCase()) ||
         record.crime.toLowerCase().includes(searchQuery.toLowerCase())
     );
     setFilteredCriminalRecords(filteredRecords);
@@ -47,8 +51,8 @@ const ViewCriminal = () => {
           <p><img src={Finger} alt="" /><span>Criminal Records</span></p>
           <p>Show 
             <select name="" id="">
-              <option value="">0</option>
-              <option value="1">1</option>
+              <option value="">0</option>78
+              <option value="1">1</option>66
               <option value="2">2</option>
               <option value="3">3</option>
               <option value="4">4</option>
@@ -92,14 +96,14 @@ const ViewCriminal = () => {
           {filteredCriminalRecords.map((record) => (
             <tr key={record.id}>
               <td>{record.id}</td>
-              <td><img src={record.image} alt="" /></td>
-              <td>{record.firstName}</td>
-              <td>{record.lastName}</td>
+              <td><img src={record.image} alt="" style={{ width: '2rem', paddingTop: '2px' }} /></td>
+              <td>{record.firstname}</td>
+              <td>{record.lastname}</td>
               <td>{record.gender}</td>
               <td>{record.crime}</td>
-              <td>{record.crimeDate}</td>
+              <td>{record.dateCommitted}</td>
               <td>{record.status}</td>
-              <td><Link to='/criminalProfile'><img src={Eye2} alt="" /></Link></td>
+              <td><Link to={`/criminalProfile/${record.id}`}><img src={Eye2} alt="" /></Link></td>
               <td>{record.sentence}</td>
             </tr>
           ))}

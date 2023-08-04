@@ -382,6 +382,13 @@ body{
   gap: 4rem;
 
 }
+.add-container2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+
+}
 
 .add-box ul p{
   font-size: 16px;
@@ -433,6 +440,21 @@ body{
   cursor: pointer;
   margin-top: 4rem;
   margin-left:20rem;
+}
+
+.addBtn2{
+  display: Block;
+  padding: 10px;
+  gap: 10px;
+  width: 150px;
+  padding: 1rem;
+  border-radius: 10px;
+  background: #0E346C;
+  border: none;
+  color: #FFF;
+  cursor: pointer;
+  margin-top: 4rem;
+  margin-left: 5rem;
 }
 
 .view-record{

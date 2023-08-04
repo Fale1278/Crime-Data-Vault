@@ -4,9 +4,9 @@ import Capture from '../../../assets/capture.png';
 
 const AddPolice = () => {
   const [formData, setFormData] = useState({
-    firstname: '',
-    lastname: '',
-    middlename: '',
+    firstName: '',
+    lastName: '',
+    middleName: '',
     age: '',
     maritalStatus: '',
     email: '',
@@ -14,13 +14,13 @@ const AddPolice = () => {
     address :'',
     DOB: '',
     gender: '',
-    LGA: '',
+    lga: '',
     town: '',
     state: '',
     nationality: '',
     height: '',
     weight: '',
-    eyecolor: '',
+    eyeColor: '',
     bloodGroup: '',
     haircolor: '',
     nextOfKin: '',
@@ -29,6 +29,7 @@ const AddPolice = () => {
     rank: '',
     appointmentDate: '',
     currentStation: '',
+    policeId: '',
   });
 
   const [isSuccessPopupOpen, setSuccessPopupOpen] = useState(false);
@@ -44,7 +45,7 @@ const AddPolice = () => {
 
   const postFormData = async () => {
     try {
-      const response = await fetch('https://crime-vault-database.onrender.com/officers/addcriminal', {
+      const response = await fetch('https://crime-vault-database.onrender.com/admin/officersignup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -71,9 +72,9 @@ const AddPolice = () => {
         setErrorPopupOpen(false);
         // Optionally, you can reset the form after successful submission
         setFormData({
-          firstname: '',
-          lastname: '',
-          middlename: '',
+          firstName: '',
+          lastName: '',
+          middleName: '',
           age: '',
           maritalStatus: '',
           contactLine: '',
@@ -81,18 +82,19 @@ const AddPolice = () => {
           address :'',
           DOB: '',
           gender: '',
-          LGA: '',
+          lga: '',
           town: '',
           state: '',
           nationality: '',
           height: '',
           weight: '',
-          eyecolor: '',
+          eyeColor: '',
           bloodGroup: '',
           haircolor: '',
           nextOfKin: '',
           nextOfKinContact: '',
-          nextOfKinContact: '',
+          nextOfKinAddress: '',
+          policeId: '',
           rank: '',
           appointmentDate: '',
           currentStation: '',
@@ -128,17 +130,17 @@ const AddPolice = () => {
 
           <ul>
             <p>First Name</p>
-            <input type='text' name='firstname' onChange={handleInputChange} value={formData.firstname} />
+            <input type='text' name='firstName' onChange={handleInputChange} value={formData.firstName} />
           </ul>
 
           <ul>
             <p>Middle Name</p>
-            <input type='text' name='middlename' onChange={handleInputChange} value={formData.middlename} />
+            <input type='text' name='middleName' onChange={handleInputChange} value={formData.middleName} />
           </ul>
 
           <ul>
             <p>Last Name</p>
-            <input type='text' name='lastname' onChange={handleInputChange} value={formData.lastname} />
+            <input type='text' name='lastName' onChange={handleInputChange} value={formData.lastName} />
           </ul>
 
           <ul>
@@ -168,7 +170,7 @@ const AddPolice = () => {
 
           <ul>
             <p>LGA</p>
-            <input type='text' name='LGA' onChange={handleInputChange} value={formData.LGA} />
+            <input type='text' name='lga' onChange={handleInputChange} value={formData.lga} />
           </ul>
 
           <ul>
@@ -198,7 +200,7 @@ const AddPolice = () => {
 
           <ul>
             <p>Eye Color</p>
-            <input type='text' name='eyecolor' onChange={handleInputChange} value={formData.eyecolor} />
+            <input type='text' name='eyeColor' onChange={handleInputChange} value={formData.eyeColor} />
           </ul>
 
           <ul>
@@ -219,7 +221,7 @@ const AddPolice = () => {
           </ul>
 
           <ul>
-            <p>Contact Line</p>
+            <p>Email</p>
             <input type='email' name='email' onChange={handleInputChange} value={formData.email} />
           </ul>
 
@@ -254,7 +256,7 @@ const AddPolice = () => {
 
           <ul>
             <p>Appointment Date</p>
-            <input type='date' name='apointmentDate' onChange={handleInputChange} value={formData.appointmentDate} />
+            <input type='date' name='appointmentDate' onChange={handleInputChange} value={formData.appointmentDate} />
           </ul>
 
           <ul>

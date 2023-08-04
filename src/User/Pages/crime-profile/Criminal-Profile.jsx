@@ -64,9 +64,9 @@ const CriminalProfile = () => {
             <h1><i className='bx bxs-user'></i><span>Personal Details</span></h1>
           </div>
           <div className="external2">
-            <p><b>First Name: </b>{criminalRecord.firstName}</p>
-            <p><b>Middle Name: </b>{criminalRecord.middleName}</p>
-            <p><b>Last Name: </b>{criminalRecord.lastName}</p>
+            <p><b>First Name: </b>{criminalRecord.firstname}</p>
+            <p><b>Middle Name: </b>{criminalRecord.middlename}</p>
+            <p><b>Last Name: </b>{criminalRecord.lastname}</p>
             <p><b>Age: </b>{criminalRecord.age}</p>
             <p><b>Sex: </b>{criminalRecord.gender}</p>
             <p><b>Nationality: </b>{criminalRecord.nationality}</p>
