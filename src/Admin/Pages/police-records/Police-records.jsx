@@ -13,7 +13,7 @@ const PoliceRecords = () => {
     // Fetch the police records from the backend API
     const fetchPoliceRecords = async () => {
       try {
-        const response = await fetch('https://crime-vault-database.onrender.com/admin/officersignup');
+        const response = await fetch('https://crime-vault-database.onrender.com/admin/officers');
         if (response.ok) {
           const data = await response.json();
           setPoliceRecords(data);
@@ -31,8 +31,8 @@ const PoliceRecords = () => {
     // Filter the police records based on the search query
     const filteredRecords = policeRecords.filter(
       (record) =>
-        record.firstname.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        record.lastname.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        record.firstName.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        record.lastName.toLowerCase().includes(searchQuery.toLowerCase()) ||
         record.rank.toLowerCase().includes(searchQuery.toLowerCase())
     );
     setFilteredPoliceRecords(filteredRecords);
@@ -92,11 +92,11 @@ const PoliceRecords = () => {
           {filteredPoliceRecords.map((record) => (
             <tr key={record.id}>
               <td>{record.id}</td>
-              <td><img src={Desmond} alt="" /></td>
+              <td><img src={record.image} alt="" style={{ width: '2rem', paddingTop: '2px' }} /></td>
               <td>{record.firstName}</td>
               <td>{record.lastName}</td>
               <td>{record.rank}</td>
-              <td>{record.dateAssigned}</td>
+              <td>{record.appointmentDate}</td>
               <td><Link to={`/policeProfile/${record.id}`}><img src={Eye2} alt="" /></Link></td>
             </tr>
           ))}
