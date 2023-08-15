@@ -1,11 +1,34 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
+import { Link, useParams } from 'react-router-dom';
+import Leo from '../../../assets/leo.png';
+import Contact from '../../../assets/contact.svg';
+import Finger from '../../../assets/fingerprint.png';
 
-import { Link } from 'react-router-dom'
-
-import Leo from '../../../assets/leo.png'
-import Contact from '../../../assets/contact.svg'
-import Finger from '../../../assets/fingerprint.png'
 const CriminalProfile = () => {
+  const [criminalRecord, setCriminalRecord] = useState(null);
+  const { id } = useParams();
+
+  useEffect(() => {
+    const fetchCriminalRecord = async () => {
+      try {
+        const response = await fetch(`https://crime-vault-database.onrender.com/officers/criminals/${criminal_id}`);
+        if (response.ok) {
+          const data = await response.json();
+          setCriminalRecord(data);
+        } else {
+          console.error('Error fetching criminal record:', response.status);
+        }
+      } catch (error) {
+        console.error('Error fetching criminal record:', error);
+      }
+    };
+    fetchCriminalRecord();
+  }, [id]);
+
+  if (!criminalRecord) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <div className='police-profile'>
       <div className='pol'>
@@ -13,80 +36,84 @@ const CriminalProfile = () => {
           <img src={Finger} alt="" /><span> Criminal Details</span>
         </div>
 
-        <div className='back'><Link to='/viewCriminal' className='back'><i class='bx bx-left-arrow-alt'></i><e>Back</e ></Link></div>
+        <div className='back'>
+          <Link to='/viewCriminal' className='back'>
+            <i className='bx bx-left-arrow-alt'></i><e>Back</e>
+          </Link>
+        </div>
       </div>
 
-      <div className="police-details-container">
+      <div key={criminalRecord.id} className="police-details-container">
+        {/* Criminal Details */}
         <div className="police-details">
           <div className="police-details-box">
-            
-              <div className="kiri-kiri">
-                <span>#Kiri-kiri prison inmate</span>
-                <h1>Adamu Leo</h1>
-              </div>
+            <div className="kiri-kiri">
+              <span>#Kiri-kiri prison inmate</span>
+              <h1>{criminalRecord.name}</h1>
+            </div>
             <div className="external">
               <img src={Leo} alt="" />
             </div>
           </div>
         </div>
 
+        {/* Personal Details */}
         <div className="police-details2">
           <div className="police-details2-box">
-            <h1><i class='bx bxs-user'></i><span>Personal Details</span></h1>
+            <h1><i className='bx bxs-user'></i><span>Personal Details</span></h1>
           </div>
-
           <div className="external2">
-            <p><b>First Name: </b> Leo</p>
-            <p><b>Middle Name: </b>Jesse</p>
-            <p><b>Last Name: </b> Adamu</p>
-            <p><b>Age: </b> 21</p>
-            <p><b>Sex: </b> Male</p>
-            <p><b>Nationality: </b> Nigerian</p>
-            <p><b>State: </b> Borno</p>
-            <p><b>LGA: </b> Hawul</p>
-            <p><b>Blood Group: </b> B+</p>
-            <p><b>Height: </b> 178 CM</p>
-            <p><b>Rank: </b> Sergeant</p>
-            <p><b>Marital Status: </b> Single</p>
-            <p><b>Address: </b> GGSS</p>
+            <p><b>First Name: </b>{criminalRecord.firstname}</p>
+            <p><b>Middle Name: </b>{criminalRecord.middlename}</p>
+            <p><b>Last Name: </b>{criminalRecord.lastname}</p>
+            <p><b>Age: </b>{criminalRecord.age}</p>
+            <p><b>Sex: </b>{criminalRecord.gender}</p>
+            <p><b>Nationality: </b>{criminalRecord.nationality}</p>
+            <p><b>State: </b>{criminalRecord.state}</p>
+            <p><b>LGA: </b>{criminalRecord.LGA}</p>
+            <p><b>Blood Group: </b>{criminalRecord.bloodGroup}</p>
+            <p><b>Height: </b>{criminalRecord.height}</p>
+            <p><b>Occupation: </b>{criminalRecord.occupation}</p>
+            <p><b>Marital Status: </b>{criminalRecord.maritalStatus}</p>
+            <p><b>Address: </b>{criminalRecord.address}</p>
           </div>
         </div>
 
+        {/* Emergency Contact */}
         <div className="police-details2">
           <div className="police-details2-box">
             <h1><img src={Contact} alt="" /><span>Emergency Contact</span></h1>
           </div>
-
           <div className="external2">
-            <p><b>First Name: </b> Joy</p>
-            <p><b>Middle Name: </b> Musu</p>
-            <p><b>Last Name: </b> James</p>
-            <p><b>Contact Line: </b> 09066998956</p>
-            <p><b>Address: </b> Behind Toro</p>
-            <p><b>Relationship: </b> Mother</p>
+            <p><b>First Name: </b>{criminalRecord.Contactfirstname}</p>
+            <p><b>Middle Name: </b>{criminalRecord.Contactmiddlename}</p>
+            <p><b>Last Name: </b>{criminalRecord.Contactlastname}</p>
+            <p><b>Contact Line: </b>{criminalRecord.contactLine}</p>
+            <p><b>Address: </b>{criminalRecord.contactaddress}</p>
+            <p><b>Relationship: </b>{criminalRecord.contactRelationship}</p>
           </div>
         </div>
 
+        {/* Crime Details */}
         <div className="police-details2">
           <div className="police-details2-box">
-            <h1><img src={Finger} alt="" /><span>Work Details</span></h1>
+            <h1><img src={Finger} alt="" /><span>Crime Details</span></h1>
           </div>
-
           <div className="external2">
-            <p><b>Crime: </b> Cybercrime</p>
-            <p><b>Date Committed: </b>10-02-2022</p>
-            <p><b>Date Convicted: </b> 20-02-2022</p>
-            <p><b>Correctional Centre: </b> Kiri-Kiri Correctional Prison</p>
-            <p><b>Sentence: </b> 3 years</p>
+            <p><b>Crime: </b>{criminalRecord.crime}</p>
+            <p><b>Date Committed: </b>{criminalRecord.dateCommitted}</p>
+            <p><b>Date Convicted: </b>{criminalRecord.dateConvicted}</p>
+            <p><b>Correctional Centre: </b>{criminalRecord.correctionalCentre}</p>
+            <p><b>Sentence: </b>{criminalRecord.sentence}</p>
           </div>
-        </div> 
+        </div>
       </div>
 
       <button className='update'>
         <Link to='/updateCriminal' className='link'>Update Record</Link>
       </button>
     </div>
-  )
-}
+  );
+};
 
-export default CriminalProfile
+export default CriminalProfile;

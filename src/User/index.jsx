@@ -39,7 +39,7 @@ const index = () => {
           <Route path='/updateVisitor' element={<UpdateVisitor />} />
           <Route path='/addVisitor' element={<AddVisitor />} />
           <Route path='/policeRecord' element={<PoliceRecord />} />
-          <Route path='/policeProfile' element={<PoliceProfile />} />
+          <Route path='/policeProfile/:ID' element={<PoliceProfile />} />
           <Route path='/crimeCategories' element={<CrimeCategory />} />
         </Routes> 
         <Footer />

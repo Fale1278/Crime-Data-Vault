@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import Finger from '../../../assets/fingerprint.png';
 import Capture from '../../../assets/capture.png';
@@ -40,6 +41,9 @@ const AddCriminal = () => {
     haircolor: '',
   });
 
+  const [fingerPrintImage, setFingerPrintImage] = useState(null);
+  const [captureImage, setCaptureImage] = useState(null);
+
   const [isSuccessPopupOpen, setSuccessPopupOpen] = useState(false);
   const [isErrorPopupOpen, setErrorPopupOpen] = useState(false);
 
@@ -68,6 +72,28 @@ const AddCriminal = () => {
     }
   };
 
+  const uploadImages = async () => {
+    const formDataWithImages = new FormData();
+    formDataWithImages.append('fingerPrintImage', fingerPrintImage);
+    formDataWithImages.append('captureImage', captureImage);
+    // Append other form data
+    for (const key in formData) {
+      formDataWithImages.append(key, formData[key]);
+    }
+
+    try {
+      const response = await fetch('https://crime-vault-database.onrender.com/officers/addcriminal', {
+        method: 'POST',
+        body: formDataWithImages,
+      });
+
+      const responseData = await response.json();
+      console.log('Images uploaded successfully:', responseData);
+    } catch (error) {
+      console.error('Error uploading images:', error);
+    }
+  };
+
   const handleFormSubmit = async (e) => {
     e.preventDefault();
 
@@ -78,7 +104,11 @@ const AddCriminal = () => {
         console.log('Data posted successfully:', data);
         setSuccessPopupOpen(true);
         setErrorPopupOpen(false);
-        // Optionally, you can reset the form after successful submission
+
+        // Call the uploadImages function to handle image uploads
+        await uploadImages();
+
+        // Reset form fields
         setFormData({
           firstname: '',
           age: '',
@@ -115,13 +145,15 @@ const AddCriminal = () => {
           eyecolor: '',
           haircolor: '',
         });
+
+        setFingerPrintImage(null);
+        setCaptureImage(null);
       } else {
         setErrorPopupOpen(true);
         setSuccessPopupOpen(false);
       }
     } catch (error) {
       console.error('Error posting data:', error);
-      console.log(setFormData)
       setErrorPopupOpen(true);
       setSuccessPopupOpen(false);
     }
@@ -324,31 +356,37 @@ const AddCriminal = () => {
             <p>Relationship</p>
             <input type='text' name='contactRelationship' onChange={handleInputChange} value={formData.contactRelationship} />
           </ul>
-
           
+          {/* Finger Print */}
           <ul className='biometric'>
-            <p>Biometric Capture</p>
+            <p>Finger Print</p>
+            <input
+              type='file'
+              accept='image/*'
+              onChange={(e) => setFingerPrintImage(e.target.files[0])}
+            />
+            {fingerPrintImage && (
+              <img src={URL.createObjectURL(fingerPrintImage)} alt='' />
+            )}
+          </ul>
 
-            <div className='finger-capture'>
-              <ul>
-                <p>Finger Print</p>
-                <img src={Finger} alt='' />
-                {/* <input type='text' name='fingerPrints' onChange={handleInputChange} value={formData.fingerPrints} /> */}
-              </ul>
-
-              <ul>
-                <p>Capture</p>
-                <img src={Capture} alt='' />
-                {/* <input type='file' name='facialCapture' onChange={handleInputChange} value={formData.facialCapture} /> */}
-              </ul>
-            </div>
+          {/* Capture */}
+          <ul className='biometric'>
+            <p>Capture</p>
+            <input
+              type='file'
+              accept='image/*'
+              onChange={(e) => setCaptureImage(e.target.files[0])}
+            />
+            {captureImage && (
+              <img src={URL.createObjectURL(captureImage)} alt='' />
+            )}
           </ul>
         </div>
 
         <button type='submit' className='addBtn'>Add Record</button>
       </form>
-
-      {/* Success Popup */}
+      
       {isSuccessPopupOpen && (
         <div className='popup'>
           <div className='popup-content'>

@@ -3,10 +3,50 @@ import Visitor from '../../../assets/visitors.svg'
 import Desmond from '../../../assets/desmond.png'
 import Eye2 from '../../../assets/eye2.png'
 
+import { useState, useEffect } from 'react'
+
 import { Link } from 'react-router-dom'
 
 
 const ViewVisitors = () => {
+
+  const [searchQuery, setSearchQuery] = useState('');
+  const [visitorRecords, setVisitorRecord] = useState([]);
+  const [filteredVisitorRecord, setFilteredVisitorRecord] = useState([]);
+
+  useEffect(() => {
+    // Fetch the criminal records from the backend API
+    const fetchCriminalRecords = async () => {
+      try {
+        const response = await fetch('https://crime-vault-database.onrender.com/officers/criminals'); // Replace with your API endpoint
+        if (response.ok) {
+          const data = await response.json();
+          setVisitorRecord(data);
+        } else {
+          console.error('Error fetching criminal records:', response.status);
+        }
+      } catch (error) {
+        console.error('Error fetching criminal records:', error);
+      }
+    };
+    fetchCriminalRecords();
+  }, []);
+
+  useEffect(() => {
+    // Filter the criminal records based on the search query
+    const filteredRecords = visitorRecords.filter(
+      (record) =>
+        record.firstname.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        record.lastname.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        record.crime.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+    setFilteredVisitorRecord(filteredRecords);
+  }, [searchQuery, visitorRecords]);
+
+  const handleSearchChange = (e) => {
+    const query = e.target.value;
+    setSearchQuery(query);
+  };
   return (
     <div className='view-record'>
       <div className="view-records-container">
@@ -43,193 +83,24 @@ const ViewVisitors = () => {
           <th>FIRST NAME</th>
           <th>LAST NAME</th>
           <th>GENDER</th>
-          <th>CRIME</th>
-          <th>CRIME DATE</th>
-          <th>STATUS</th>
+          <th>VISITED</th>
+          <th>RELATIONSHIP</th>
           <th>VIEW</th>
         </thead>
 
         <tbody>
-          <tr>
-            <td>1</td>
-            <td><img src={Desmond} alt="" /></td>
-            <td>Desmond</td>
-            <td>Fon Gwom</td>
-            <td>Male</td>
-            <td>Rape</td>
-            <td>1/06/2023</td>
-            <td>Pending</td>
-            <td><Link to='/visitorProfile'><img src={Eye2} alt="" /></Link></td>
-           
-          </tr>
-
-          <tr>
-            <td>2</td>
-            <td><img src={Desmond} alt="" /></td>
-            <td>Desmond</td>
-            <td>Fon Gwom</td>
-            <td>Male</td>
-            <td>Rape</td>
-            <td>1/06/2023</td>
-            <td>Pending</td>
-            <td><img src={Eye2} alt="" /></td>
-          </tr>
-
-          <tr>
-            <td>3</td>
-            <td><img src={Desmond} alt="" /></td>
-            <td>Desmond</td>
-            <td>Fon Gwom</td>
-            <td>Male</td>
-            <td>Rape</td>
-            <td>1/06/2023</td>
-            <td>Pending</td>
-            <td><img src={Eye2} alt="" /></td>
-          </tr>
-
-          <tr>
-            <td>4</td>
-            <td><img src={Desmond} alt="" /></td>
-            <td>Desmond</td>
-            <td>Fon Gwom</td>
-            <td>Male</td>
-            <td>Rape</td>
-            <td>1/06/2023</td>
-            <td>Pending</td>
-            <td><img src={Eye2} alt="" /></td>
-          </tr>
-
-          <tr>
-            <td>5</td>
-            <td><img src={Desmond} alt="" /></td>
-            <td>Desmond</td>
-            <td>Fon Gwom</td>
-            <td>Male</td>
-            <td>Rape</td>
-            <td>1/06/2023</td>
-            <td>Pending</td>
-            <td><img src={Eye2} alt="" /></td>
-          </tr>
-
-          <tr>
-            <td>6</td>
-            <td><img src={Desmond} alt="" /></td>
-            <td>Desmond</td>
-            <td>Fon Gwom</td>
-            <td>Male</td>
-            <td>Rape</td>
-            <td>1/06/2023</td>
-            <td>Pending</td>
-            <td><img src={Eye2} alt="" /></td>
-          </tr>
-
-          <tr>
-            <td>7</td>
-            <td><img src={Desmond} alt="" /></td>
-            <td>Desmond</td>
-            <td>Fon Gwom</td>
-            <td>Male</td>
-            <td>Rape</td>
-            <td>1/06/2023</td>
-            <td>Pending</td>
-            <td><img src={Eye2} alt="" /></td>
-          </tr>
-
-          <tr>
-            <td>8</td>
-            <td><img src={Desmond} alt="" /></td>
-            <td>Desmond</td>
-            <td>Fon Gwom</td>
-            <td>Male</td>
-            <td>Rape</td>
-            <td>1/06/2023</td>
-            <td>Pending</td>
-            <td><img src={Eye2} alt="" /></td>
-          </tr>
-
-          <tr>
-            <td>9</td>
-            <td><img src={Desmond} alt="" /></td>
-            <td>Desmond</td>
-            <td>Fon Gwom</td>
-            <td>Male</td>
-            <td>Rape</td>
-            <td>1/06/2023</td>
-            <td>Pending</td>
-            <td><img src={Eye2} alt="" /></td>
-          </tr>
-
-          <tr>
-            <td>10</td>
-            <td><img src={Desmond} alt="" /></td>
-            <td>Desmond</td>
-            <td>Fon Gwom</td>
-            <td>Male</td>
-            <td>Rape</td>
-            <td>1/06/2023</td>
-            <td>Pending</td>
-            <td><img src={Eye2} alt="" /></td>
-          </tr>
-
-          <tr>
-            <td>11</td>
-            <td><img src={Desmond} alt="" /></td>
-            <td>Desmond</td>
-            <td>Fon Gwom</td>
-            <td>Male</td>
-            <td>Rape</td>
-            <td>1/06/2023</td>
-            <td>Pending</td>
-            <td><img src={Eye2} alt="" /></td>
-          </tr>
-
-          <tr>
-            <td>12</td>
-            <td><img src={Desmond} alt="" /></td>
-            <td>Desmond</td>
-            <td>Fon Gwom</td>
-            <td>Male</td>
-            <td>Rape</td>
-            <td>1/06/2023</td>
-            <td>Pending</td>
-            <td><img src={Eye2} alt="" /></td>
-          </tr>
-
-          <tr>
-            <td>13</td>
-            <td><img src={Desmond} alt="" /></td>
-            <td>Desmond</td>
-            <td>Fon Gwom</td>
-            <td>Male</td>
-            <td>Rape</td>
-            <td>1/06/2023</td>
-            <td>Pending</td>
-            <td><img src={Eye2} alt="" /></td>
-          </tr>
-
-          <tr>
-            <td>14</td>
-            <td><img src={Desmond} alt="" /></td>
-            <td>Desmond</td>
-            <td>Fon Gwom</td>
-            <td>Male</td>
-            <td>Rape</td>
-            <td>1/06/2023</td>
-            <td>Pending</td>
-            <td><img src={Eye2} alt="" /></td>
-          </tr>
-
-          <tr>
-            <td>15</td>
-            <td><img src={Desmond} alt="" /></td>
-            <td>Desmond</td>
-            <td>Fon Gwom</td>
-            <td>Male</td>
-            <td>Rape</td>
-            <td>1/06/2023</td>
-            <td>Pending</td>
-            <td><img src={Eye2} alt="" /></td>
-          </tr>
+        {filteredVisitorRecord.map((record) => (
+            <tr key={record.id}>
+              <td>{record.id}</td>
+              <td><img src={record.image} alt="" style={{width: '2rem'}}/></td>
+              <td>{record.firstname}</td>
+              <td>{record.lastname}</td>
+              <td>{record.gender}</td>
+              <td>{record.crime}</td>
+              <td>{record.dateCommitted}</td>
+              <td><Link to='/criminalProfile'><img src={Eye2} alt="" /></Link></td>
+            </tr>
+          ))}
         </tbody>
       </table>
 
@@ -240,3 +111,4 @@ const ViewVisitors = () => {
 }
 
 export default ViewVisitors
+

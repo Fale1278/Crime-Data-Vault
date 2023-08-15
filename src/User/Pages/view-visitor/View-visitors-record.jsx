@@ -18,7 +18,7 @@ const ViewVisitors = () => {
     // Fetch the criminal records from the backend API
     const fetchCriminalRecords = async () => {
       try {
-        const response = await fetch('https://crime-vault-database.onrender.com/officers/criminals'); // Replace with your API endpoint
+        const response = await fetch('https://crime-vault-database.onrender.com/officers/visitors'); // Replace with your API endpoint
         if (response.ok) {
           const data = await response.json();
           setVisitorRecord(data);

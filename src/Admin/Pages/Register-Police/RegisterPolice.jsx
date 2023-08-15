@@ -1,3 +1,5 @@
+
+
 import React, { useState } from 'react';
 import Finger from '../../../assets/fingerprint.png';
 import Capture from '../../../assets/capture.png';

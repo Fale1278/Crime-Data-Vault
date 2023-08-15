@@ -80,13 +80,11 @@ const AddPolice = () => {
   };
 
   return (
-    <div className='criminal-record'>
-      <p className='add-text' >Assign Officer To Station</p>
+    <div className='criminal-police'>
+      <p style={{textAlign: 'center', padding: '2rem'}} >Assign Officer To Station</p>
+          
       <form className='add-container2' onSubmit={handleFormSubmit}>
-        <div className='add-box'>
-          <ul style={{marginBottom: '3rem'}}>
-            <h3>Enter Assigning Details</h3>
-          </ul>
+        <div className='add-box2'>
 
           <ul>
             <p>First Name</p>
@@ -136,7 +134,7 @@ const AddPolice = () => {
           </div>
         </div>
       )}
-
+ 
       {/* Error Popup */}
       {isErrorPopupOpen && (
         <div className='popup'>
@@ -151,3 +149,4 @@ const AddPolice = () => {
 };
 
 export default AddPolice;
+
