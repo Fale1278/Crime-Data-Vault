@@ -39,9 +39,7 @@ const AddPolice = () => {
     }
   };
 
-  const handleFormSubmit = async (e) => {
-    e.preventDefault();
-
+  const assignUser = async () => {
     try {
       const data = await postFormData();
 
@@ -49,7 +47,7 @@ const AddPolice = () => {
         console.log('Data posted successfully:', data);
         setSuccessPopupOpen(true);
         setErrorPopupOpen(false);
-        // Optionally, you can reset the form after successful submission
+        // Optionally, you can reset the form after successful assignment
         setFormData({
           firstname: '',
           lastname: '',
@@ -64,10 +62,23 @@ const AddPolice = () => {
         setSuccessPopupOpen(false);
       }
     } catch (error) {
-      console.error('Error posting data:', error);
-      console.log(setFormData)
+      console.error('Error assigning user:', error);
       setErrorPopupOpen(true);
       setSuccessPopupOpen(false);
+    }
+  };
+
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const data = await assignUser();
+
+      if (data) {
+        // Additional logic specific to assigning users can be added here
+      }
+    } catch (error) {
+      console.error('Error posting data:', error);
     }
   };
 
@@ -81,12 +92,12 @@ const AddPolice = () => {
 
   return (
     <div className='criminal-police'>
-      <p style={{textAlign: 'center', padding: '2rem'}} >Assign Officer To Station</p>
-          
+      <p style={{textAlign: 'center', padding: '2rem'}}>Assign Officer To Station</p>
+      
       <form className='add-container2' onSubmit={handleFormSubmit}>
         <div className='add-box2'>
-
-          <ul>
+          
+        <ul>
             <p>First Name</p>
             <input type='text' name='firstname' onChange={handleInputChange} value={formData.firstname} />
           </ul>
@@ -120,21 +131,21 @@ const AddPolice = () => {
             <p>Station</p>
             <input type='text' name='station' onChange={handleInputChange} value={formData.station} />
           </ul>
-        <button type='submit' className='addBtn2'>Add Record</button>
-        </div>
 
+          <button type='submit' className='addBtn2'>Assign Officer</button>
+        </div>
       </form>
 
       {/* Success Popup */}
       {isSuccessPopupOpen && (
         <div className='popup'>
           <div className='popup-content'>
-            <h2>Record Successfully Updated</h2>
+            <h2>Officer Assigned Successfully</h2>
             <button onClick={closeSuccessPopup}>Ok</button>
           </div>
         </div>
       )}
- 
+
       {/* Error Popup */}
       {isErrorPopupOpen && (
         <div className='popup'>
@@ -149,4 +160,3 @@ const AddPolice = () => {
 };
 
 export default AddPolice;
-

@@ -133,6 +133,29 @@ body{
   margin-left: 18rem;
   color: #000;
   font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.Navbar .notification-badge{
+  background: red;
+  width: .7rem;
+  text-align: center;
+  border-radius: 100%;
+  font-size: .5rem;
+  color: #ffffff;
+  position: absolute;
+  margin-left: 19.3rem;
+  margin-top: .5rem;
+
+}
+
+.Navbar .dropdown{
+  position: absolute;
+  background: #C4C4C4;
+  padding: 1rem;
+  margin-left: 18rem;
+  margin-top: 3rem;
+  z-index: -999;
 }
 
 .Navbar .search{

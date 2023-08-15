@@ -19,7 +19,7 @@ const Navbar = () => {
 
   const fetchUpdateRequests = async () => {
     try {
-      const response = await fetch('your_api_endpoint_here');
+      const response = await fetch('https://crime-vault-database.onrender.com/admin/officers');
       if (response.ok) {
         const data = await response.json();
         setUpdateRequests(data);
@@ -45,7 +45,7 @@ const Navbar = () => {
         <div className='dropdown'>
           {updateRequests.map(request => (
             <div key={request.id} className='dropdown-item'>
-              {request.message}
+              <p>{request.message}</p>
             </div>
           ))}
         </div>
