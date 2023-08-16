@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 
 const AddPolice = () => {
@@ -13,6 +14,7 @@ const AddPolice = () => {
 
   const [isSuccessPopupOpen, setSuccessPopupOpen] = useState(false);
   const [isErrorPopupOpen, setErrorPopupOpen] = useState(false);
+  const [generatedData, setGeneratedData] = useState(null);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -33,7 +35,7 @@ const AddPolice = () => {
       });
 
       const data = await response.json();
-      return data;
+      return { data, status: response.status }; // Return both data and response status
     } catch (error) {
       throw error;
     }
@@ -41,10 +43,11 @@ const AddPolice = () => {
 
   const assignUser = async () => {
     try {
-      const data = await postFormData();
+      const { data, status } = await postFormData();
 
-      if (data) {
+      if (status === 200) {
         console.log('Data posted successfully:', data);
+        setGeneratedData(data); // Store the generated data
         setSuccessPopupOpen(true);
         setErrorPopupOpen(false);
         // Optionally, you can reset the form after successful assignment
@@ -72,11 +75,7 @@ const AddPolice = () => {
     e.preventDefault();
 
     try {
-      const data = await assignUser();
-
-      if (data) {
-        // Additional logic specific to assigning users can be added here
-      }
+      await assignUser();
     } catch (error) {
       console.error('Error posting data:', error);
     }
@@ -84,6 +83,7 @@ const AddPolice = () => {
 
   const closeSuccessPopup = () => {
     setSuccessPopupOpen(false);
+    setGeneratedData(null); // Clear generated data when popup is closed
   };
 
   const closeErrorPopup = () => {
@@ -92,8 +92,8 @@ const AddPolice = () => {
 
   return (
     <div className='criminal-police'>
-      <p style={{textAlign: 'center', padding: '2rem'}}>Assign Officer To Station</p>
-      
+      <p style={{ textAlign: 'center', padding: '2rem' }}>Assign Officer To Station</p>
+
       <form className='add-container2' onSubmit={handleFormSubmit}>
         <div className='add-box2'>
           
@@ -141,6 +141,12 @@ const AddPolice = () => {
         <div className='popup'>
           <div className='popup-content'>
             <h2>Officer Assigned Successfully</h2>
+            {generatedData && (
+              <div>
+                <p>Generated ID: {generatedData.id}</p>
+                <p>Generated Password: {generatedData.password}</p>
+              </div>
+            )}
             <button onClick={closeSuccessPopup}>Ok</button>
           </div>
         </div>

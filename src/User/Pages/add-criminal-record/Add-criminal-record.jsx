@@ -39,6 +39,7 @@ const AddCriminal = () => {
     weight: '',
     eyecolor: '',
     haircolor: '',
+    frequency: '', // Add the missing frequency property
   });
 
   const [fingerPrintImage, setFingerPrintImage] = useState(null);
@@ -49,10 +50,10 @@ const AddCriminal = () => {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
+    setFormData((prevFormData) => ({
+      ...prevFormData,
       [name]: value,
-    });
+    }));
   };
 
   const postFormData = async () => {
@@ -105,16 +106,16 @@ const AddCriminal = () => {
         setSuccessPopupOpen(true);
         setErrorPopupOpen(false);
 
-        // Call the uploadImages function to handle image uploads
         await uploadImages();
 
-        // Reset form fields
+        // Reset form fields except for frequency, which was missing in the initial state
         setFormData({
+          ...formData,
           firstname: '',
           age: '',
           Contactfirstname: '',
-          Contactlastname : '',
-          Contactmiddlename : '',
+          Contactlastname: '',
+          Contactmiddlename: '',
           contactaddress: '',
           middlename: '',
           maritalStatus: '',
@@ -129,7 +130,7 @@ const AddCriminal = () => {
           occupation: '',
           crime: '',
           complexion: '',
-          address :'',
+          address: '',
           DOB: '',
           gender: '',
           category: '',
@@ -139,11 +140,12 @@ const AddCriminal = () => {
           nationality: '',
           status: '',
           height: '',
-          reportedBy:'',
+          reportedBy: '',
           bloodGroup: '',
           weight: '',
           eyecolor: '',
           haircolor: '',
+          frequency: '',
         });
 
         setFingerPrintImage(null);
@@ -405,6 +407,7 @@ const AddCriminal = () => {
           </div>
         </div>
       )}
+
     </div>
   );
 };
