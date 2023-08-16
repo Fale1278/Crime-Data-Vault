@@ -65,15 +65,17 @@ const PoliceProfile = () => {
             <p><b>First Name: </b>{policeOfficer.firstName}</p>
             <p><b>Middle Name: </b>{policeOfficer.middleName}</p>
             <p><b>Last Name: </b>{policeOfficer.lastName}</p>
+            <p><b>Date Of Birth: </b> {policeOfficer.DOB}</p>
             <p><b>Age: </b>{policeOfficer.age}</p>
             <p><b>Sex: </b>{policeOfficer.gender}</p>
             <p><b>Nationality: </b>{policeOfficer.nationality}</p>
             
             <p><b>State: </b> {policeOfficer.state}</p>
             <p><b>LGA: </b> {policeOfficer.lga}</p>
+            <p><b>Town: </b> {policeOfficer.town}</p>
+            <p><b>Address: </b> {policeOfficer.address}</p>
             <p><b>Blood Group: {policeOfficer.bloodGroup}</b> </p>
             <p><b>Height: </b> {policeOfficer.height}</p>
-            <p><b>Rank: </b> {policeOfficer.rank}</p>
             <p><b>Marital Status: </b> {policeOfficer.maritalStatus}</p>
           </div>
         </div>
@@ -84,9 +86,12 @@ const PoliceProfile = () => {
           </div>
 
           <div className="external2">
+            <p><b>Email: </b> {policeOfficer.email}</p>
             <p><b>Contact Line: </b> {policeOfficer.contactLine}</p>
             <p><b>Address: </b> {policeOfficer.address}</p>
-            <p><b>Next of Kin: </b> {policeOfficer.nwxtOfKin}</p>
+            <p><b>Next of Kin: </b> {policeOfficer.nextOfKin}</p>
+            <p><b>Next of Address: </b> {policeOfficer.nextOfAddress}</p>
+            <p><b>Next of Contact: </b> {policeOfficer.nextOfContact}</p>
           </div>
         </div>
 
@@ -96,6 +101,7 @@ const PoliceProfile = () => {
           </div>
 
           <div className="external2">
+            <p><b>Rank: </b> {policeOfficer.rank}</p>
             <p><b>Police ID: </b> {policeOfficer.policeId}</p>
             <p><b>Appointment Date: </b> {policeOfficer.appointmentDate}</p>
             <p><b>Current Station: </b> {policeOfficer.currentStation}</p>

@@ -33,6 +33,7 @@ const index = () => {
         <Route path='/viewVisitor' element={<ViewVisitor />} />
         <Route path='/policeRecord' element={<PoliceRecord />} />
         <Route path='/registerPolice' element={<RegisterPolice />} />
+        <Route path='/policeProfile/:ID' element={<PoliceProfile />} />
         <Route path='/assignPolice' element={<AssignPolice />} />
         <Route path='/crimeCategories' element={<CrimeCategory />} />
         </Routes> 

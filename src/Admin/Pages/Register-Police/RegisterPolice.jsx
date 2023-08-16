@@ -1,11 +1,9 @@
-
-
 import React, { useState } from 'react';
 import Finger from '../../../assets/fingerprint.png';
 import Capture from '../../../assets/capture.png';
 
 const AddPolice = () => {
-  const [formData, setFormData] = useState({
+  const initialFormData = {
     firstName: '',
     lastName: '',
     middleName: '',
@@ -32,17 +30,18 @@ const AddPolice = () => {
     appointmentDate: '',
     currentStation: '',
     policeId: '',
-  });
+  };
 
+  const [formData, setFormData] = useState({ ...initialFormData });
   const [isSuccessPopupOpen, setSuccessPopupOpen] = useState(false);
   const [isErrorPopupOpen, setErrorPopupOpen] = useState(false);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
+    setFormData((prevFormData) => ({
+      ...prevFormData,
       [name]: value,
-    });
+    }));
   };
 
   const postFormData = async () => {
@@ -68,46 +67,17 @@ const AddPolice = () => {
     try {
       const data = await postFormData();
 
-      if (data) {
+      if (data && data.message === 'Record added successfully') {
         console.log('Data posted successfully:', data);
         setSuccessPopupOpen(true);
         setErrorPopupOpen(false);
-        // Optionally, you can reset the form after successful submission
-        setFormData({
-          firstName: '',
-          lastName: '',
-          middleName: '',
-          age: '',
-          maritalStatus: '',
-          contactLine: '',
-          email: '',
-          address :'',
-          DOB: '',
-          gender: '',
-          lga: '',
-          town: '',
-          state: '',
-          nationality: '',
-          height: '',
-          weight: '',
-          eyeColor: '',
-          bloodGroup: '',
-          haircolor: '',
-          nextOfKin: '',
-          nextOfKinContact: '',
-          nextOfKinAddress: '',
-          policeId: '',
-          rank: '',
-          appointmentDate: '',
-          currentStation: '',
-        });
+        setFormData({ ...initialFormData }); // Reset the form after successful submission
       } else {
         setErrorPopupOpen(true);
         setSuccessPopupOpen(false);
       }
     } catch (error) {
       console.error('Error posting data:', error);
-      console.log(setFormData)
       setErrorPopupOpen(true);
       setSuccessPopupOpen(false);
     }
