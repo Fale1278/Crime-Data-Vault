@@ -46,7 +46,7 @@ const AddPolice = () => {
 
   const postFormData = async () => {
     try {
-      const response = await fetch('https://crime-vault-database.onrender.com/admin/officersignup', {
+      const response = await fetch('https://crime-vault-database.onrender.com/admin/officerSignup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -7,7 +7,7 @@ import Contact from '../../../assets/contact.svg';
 import Finger from '../../../assets/fingerprint.png';
 
 const PoliceProfile = () => {
-  const [policeOfficer, setPoliceOfficer] = useState(null);
+  const [policeOfficer, setPoliceOfficer] = useState(true);
   const { ID } = useParams();
 
   useEffect(() => {

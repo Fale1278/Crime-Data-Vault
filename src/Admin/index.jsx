@@ -12,6 +12,7 @@ import ViewVisitor from '../Admin/Pages/view-visitor/View-visitors-record'
 import PoliceRecord from '../Admin/Pages/police-records/Police-records'
 import AssignPolice from '../Admin/Pages/Assign-Police/AssignPolice'
 import RegisterPolice from '../Admin/Pages/Register-Police/RegisterPolice'
+import PoliceProfile from '../User/Pages/police-profile/Police-Profile'
 import CrimeCategory from '../Admin/Pages/crime-categories/Crime-Categories'
 
 const index = () => {
@@ -27,15 +28,15 @@ const index = () => {
         <Navbar />
         <Sidebar />
         <Routes>
-        <Route path='/' element={<TableChart />} />
-        <Route path='/viewCriminal' element={<ViewCriminal />} />
-        <Route path='/criminalProfile' element={<CriminalProfile />} />
-        <Route path='/viewVisitor' element={<ViewVisitor />} />
-        <Route path='/policeRecord' element={<PoliceRecord />} />
-        <Route path='/registerPolice' element={<RegisterPolice />} />
-        <Route path='/policeProfile/:ID' element={<PoliceProfile />} />
-        <Route path='/assignPolice' element={<AssignPolice />} />
-        <Route path='/crimeCategories' element={<CrimeCategory />} />
+          <Route path='/' element={<TableChart />}/>
+            <Route path='/viewCriminal' element={<ViewCriminal />} />
+            <Route path='/criminalProfile' element={<CriminalProfile />} />
+            <Route path='/viewVisitor' element={<ViewVisitor />} />
+            <Route path='/policeRecord' element={<PoliceRecord />} />
+            <Route path='/registerPolice' element={<RegisterPolice />} />
+            <Route path='/policeProfile/:ID' element={<PoliceProfile />} />
+            <Route path='/assignPolice' element={<AssignPolice />} />
+            <Route path='/crimeCategories' element={<CrimeCategory />} />
         </Routes> 
         <Footer />
       
